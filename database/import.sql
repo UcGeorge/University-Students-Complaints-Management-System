@@ -93,17 +93,19 @@ INSERT INTO `course` (`course_code`, `department`, `course_title`, `year`) VALUE
 --
 
 CREATE TABLE `lecturer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lec_no` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`lec_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `lecturer`
 --
 
-INSERT INTO `lecturer` (`id`, `name`) VALUES
-(1, 2, 'Ebunoluwa Philip Fashina');
+INSERT INTO `lecturer` (`lec_no`, `name`, `password`) VALUES
+('100805513', 'Ebunoluwa Philip Fashina', 'Test@123'),
+('000000000', 'Admin', 'Admin@123');
 
 -- --------------------------------------------------------
 
@@ -123,6 +125,34 @@ CREATE TABLE `lecturer-course` (
 
 INSERT INTO `lecturer-course` (`lecturer`, `course`) VALUES
 (1, 'CSC422');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `mat_no` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `department` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`mat_no`),
+  KEY `department` (`department`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`mat_no`, `name`, `department`, `year`, `password`) VALUES
+('170805513', 'Uche-Umeh George Uche', 2, 4, 'Test@123'),
+('170805500', 'Alfred Lee', 2, 4, 'Test@123'),
+('170805501', 'Logan Blue', 2, 4, 'Test@123'),
+('170805502', 'Collin Grey', 2, 4, 'Test@123'),
+('170805503', 'Jason Durell', 2, 4, 'Test@123'),
+('170805504', 'Blue Rose', 2, 4, 'Test@123');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
