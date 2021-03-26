@@ -6,24 +6,26 @@
 	<title>Complaint Management System</title>
 </head>
 <body>
+	<script type="text/javascript" src="script/login.js"></script>
+	<!-- <script type="text/javascript" src="studentPage.js"></script>
+ -->
 	<div class="container">
-
 		<div class="header">
 			<h2>Log In</h2>
 		</div>
 		
-		<form action="login.php" method="post">
+		<form>
 			<div>
 				<label for="email"> Email: </label>
-				<input type="email" name="email" required>
+				<input type="email" name="email" onchange="newStudent.onEmailChange(event)" required>
 			</div>
 
 			<div>
 				<label for="password"> Password: </label>
-				<input type="password" name="password" required>
+				<input type="password" name="password" onchange="newStudent.onPasswordChange(event)" required>
 			</div>
 
-			<button type="submit" name="login_user"><b>Log in</b> </button>
+			<button onclick="newStudent.onSubmitLogIn()" type="submit" name="login_user"><b>Log in</b> </button>
 		</form>
 	</div>
 </body>
