@@ -29,7 +29,7 @@ class Complaint
         $sql = "SELECT
                     *
                 FROM
-                    ' . $this->table . '
+                    $this->table
                 WHERE
                     `category` IN(
                         SELECT
@@ -37,7 +37,7 @@ class Complaint
                         FROM
                             `student-course`
                         WHERE
-                            `student` = " . $student . "
+                            `student` = $student
                     )";
 
         // Execute
@@ -74,7 +74,7 @@ class Complaint
         $sql = "SELECT
                     *
                 FROM
-                    ' . $this->table . '
+                    $this->table
                 WHERE
                     `category` IN(
                         SELECT
@@ -82,7 +82,7 @@ class Complaint
                         FROM
                             `lecturer-course`
                         WHERE
-                            `lecturer` = " . $lecturer . "
+                            `lecturer` = $lecturer
                     )";
 
         // Execute
@@ -116,12 +116,12 @@ class Complaint
     public function get_by_course($course_code)
     {
         // Create query
-        $sql = 'SELECT
+        $sql = "SELECT
                     *
                 FROM
-                    ' . $this->table . '
+                    $this->table
                 WHERE
-                    category = ' . $course_code;
+                    `category` = $course_code";
 
         // Execute
         $result = $this->conn->query($sql);
