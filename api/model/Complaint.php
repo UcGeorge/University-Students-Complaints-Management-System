@@ -12,8 +12,6 @@ class Complaint
     public $status;
     public $title;
     public $description;
-    public $tags;
-    public $subscribers;
     public $dateadded;
 
     // Constructor with DB
@@ -37,7 +35,7 @@ class Complaint
                         FROM
                             `student-course`
                         WHERE
-                            `student` = $student
+                            `student` = '$student'
                     )";
 
         // Execute
@@ -48,20 +46,17 @@ class Complaint
 
         // Output data of each row to complaint array
         while ($row = $result->fetch_assoc()) {
-            $complaint_id = $row["id"];
-
             $complaint = array(
+                'id' => $row["id"],
                 'author' => $row["author"],
                 'category' => $row["category"],
                 'status' => $row["status"],
                 'title' => $row["title"],
                 'description' => $row["description"],
-                'tags' => $row["tags"],
-                'subscribers' => $row["subscribers"],
                 'dateadded' => $row["dateadded"]
             );
 
-            $complaints_arr[$complaint_id] = $complaint;
+            array_push($complaints_arr, $complaint);
         }
 
         return $complaints_arr;
@@ -82,7 +77,7 @@ class Complaint
                         FROM
                             `lecturer-course`
                         WHERE
-                            `lecturer` = $lecturer
+                            `lecturer` = '$lecturer'
                     )";
 
         // Execute
@@ -93,20 +88,17 @@ class Complaint
 
         // Output data of each row to complaint array
         while ($row = $result->fetch_assoc()) {
-            $complaint_id = $row["id"];
-
             $complaint = array(
+                'id' => $row["id"],
                 'author' => $row["author"],
                 'category' => $row["category"],
                 'status' => $row["status"],
                 'title' => $row["title"],
                 'description' => $row["description"],
-                'tags' => $row["tags"],
-                'subscribers' => $row["subscribers"],
                 'dateadded' => $row["dateadded"]
             );
 
-            $complaints_arr[$complaint_id] = $complaint;
+            array_push($complaints_arr, $complaint);
         }
 
         return $complaints_arr;
@@ -121,7 +113,7 @@ class Complaint
                 FROM
                     $this->table
                 WHERE
-                    `category` = $course_code";
+                    `category` = '$course_code'";
 
         // Execute
         $result = $this->conn->query($sql);
@@ -131,20 +123,17 @@ class Complaint
 
         // Output data of each row to complaint array
         while ($row = $result->fetch_assoc()) {
-            $complaint_id = $row["id"];
-
             $complaint = array(
+                'id' => $row["id"],
                 'author' => $row["author"],
                 'category' => $row["category"],
                 'status' => $row["status"],
                 'title' => $row["title"],
                 'description' => $row["description"],
-                'tags' => $row["tags"],
-                'subscribers' => $row["subscribers"],
                 'dateadded' => $row["dateadded"]
             );
 
-            $complaints_arr[$complaint_id] = $complaint;
+            array_push($complaints_arr, $complaint);
         }
 
         return $complaints_arr;

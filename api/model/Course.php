@@ -21,11 +21,11 @@ class Course
     public function get_course(string $id, string $type): array
     {
         // Create query
-        $sql = $type == 'student' ?
+        $student_query =
             "SELECT
             *
         FROM
-            `-$this->table`
+            `$this->table`
         WHERE
             `course_code` IN(
                 SELECT
@@ -33,12 +33,13 @@ class Course
                 FROM
                     `student-course`
                 WHERE
-                    `student` = $id
-            )" :
+                    `student` = '$id'
+            )";
+        $lecturer_query =
             "SELECT
             *
         FROM
-            `-$this->table`
+            `$this->table`
         WHERE
             `course_code` IN(
                 SELECT
@@ -46,8 +47,10 @@ class Course
                 FROM
                     `lecturer-course`
                 WHERE
-                    `lecturer` = $id
+                    `lecturer` = '$id'
             )";
+
+        $sql = $type == 'student' ? $student_query : $lecturer_query;
 
         // Execute
         $result = $this->conn->query($sql);
@@ -57,12 +60,15 @@ class Course
 
         // Output data of each row to the result array
         while ($row = $result->fetch_assoc()) {
-            $result_arr = array(
-                'course_code' => $row['course_code'],
+            $course_code = $row["course_code"];
+
+            $course = array(
                 'department' => $row['department'],
                 'year' => $row['year'],
                 'course_title' => $row['course_title']
             );
+
+            $result_arr[$course_code] = $course;
         }
 
         return $result_arr;

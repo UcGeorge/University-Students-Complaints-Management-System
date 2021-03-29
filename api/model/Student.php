@@ -46,12 +46,18 @@ class Student
     public function get_student($mat_no)
     {
         // Create query
-        $sql = "SELECT
-                    *
-                FROM
-                    $this->table
-                WHERE
-                    `mat_no`=$mat_no";
+        $sql =
+            "SELECT
+            $this->table.`mat_no`,
+            $this->table.`name`,
+            `department`.`name` AS `department`,
+            $this->table.`year`,
+            $this->table.`password`
+        FROM
+            $this->table
+        INNER JOIN `department` ON $this->table.`department` = `department`.`id`
+        WHERE
+            `mat_no` = '$mat_no'";
 
         // Execute
         $result = $this->conn->query($sql);
