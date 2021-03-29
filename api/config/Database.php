@@ -15,18 +15,18 @@ class Database
 
         try {
             $this->conn = new mysqli(
-                $this->db_name,
+                $this->host,
                 $this->username,
-                $this->password
+                $this->password,
+                $this->db_name
             );
 
             // Check connection
             if ($this->conn->connect_error) {
                 throw new Exception("Connection failed: " . $this->conn->connect_error);
             }
-            echo "Connected successfully";
         } catch (Exception $e) {
-            echo 'Connection Error: ' . $e->getMessage();
+            throw $e;
         }
 
         return $this->conn;
