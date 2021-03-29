@@ -8,6 +8,7 @@ class Lecturer
     // Lecturer Properties
     public $lec_no;
     public $name;
+    public $department;
     public $password;
 
     // Constructor with DB
@@ -44,12 +45,17 @@ class Lecturer
     public function get_lecturer($lec_no)
     {
         // Create query
-        $sql = "SELECT
-                    *
-                FROM
-                    $this->table
-                WHERE
-                    `lec_no`=$lec_no";
+        $sql =
+            "SELECT
+            $this->table.`lec_no`,
+            $this->table.`name`,
+            `department`.`name` AS `department`,
+            $this->table.`password`
+        FROM
+            $this->table
+        INNER JOIN `department` ON $this->table.`department` = `department`.`id`
+        WHERE
+            `lec_no` = '$lec_no'";
 
         // Execute
         $result = $this->conn->query($sql);
@@ -63,7 +69,6 @@ class Lecturer
                 'lec_no' => $row['lec_no'],
                 'name' => $row['name'],
                 'department' => $row['department'],
-                'year' => $row['year'],
                 'password' => $row['password']
             );
         }

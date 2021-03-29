@@ -22,8 +22,48 @@ class Authenticator
         $student_credentials = $student_db->get_auth();
         $lecturer_credentials = $lecturer_db->get_auth();
 
-        // Check if PHP_AUTH_USER is not part of the authorized users
-        if (!array_key_exists($username, $student_credentials) && !array_key_exists($username, $lecturer_credentials)) {
+        // Check if user exists as a student
+        if (array_key_exists($username, $student_credentials)) {
+            // User exists as a student, check if password is wrong
+            if ($student_credentials[$username] != $password) {
+                header('WWW-Authenticate: Basic realm="Private Area"');
+                header('HTTP/1.0 401 Unauthorized');
+                return array(
+                    'username' => null,
+                    'type' => null,
+                    'message' => 'Password is wrong'
+                );
+            } else {
+                // Return user and type.
+                return array(
+                    'username' => $username,
+                    'type' => 'student',
+                    'message' => 'Verified'
+                );
+            }
+
+            // Check if user exists as a lecturer
+        } else if (array_key_exists($username, $lecturer_credentials)) {
+            // User exists as a lecturer, check if password is wrong
+            if ($lecturer_credentials[$username] != $password) {
+                header('WWW-Authenticate: Basic realm="Private Area"');
+                header('HTTP/1.0 401 Unauthorized');
+                return array(
+                    'username' => null,
+                    'type' => null,
+                    'message' => 'Password is wrong'
+                );
+            } else {
+                // Return user and type.
+                return array(
+                    'username' => $username,
+                    'type' => $username == '000000000' ? 'admin' : 'lecturer',
+                    'message' => 'Verified'
+                );
+            }
+
+            // User does not exist
+        } else {
             header('WWW-Authenticate: Basic realm="Private Area"');
             header('HTTP/1.0 401 Unauthorized');
             return array(
@@ -32,37 +72,5 @@ class Authenticator
                 'message' => 'User does not exist'
             );
         }
-
-        // User exists and is a student, check if password is wrong
-        if ($student_credentials[$username] != $password) {
-            header('WWW-Authenticate: Basic realm="Private Area"');
-            header('HTTP/1.0 401 Unauthorized');
-            return array(
-                'username' => null,
-                'type' => null,
-                'message' => 'Password is wrong'
-            );
-        }
-
-        // User exists and is a lecturer, check if password is wrong
-        if ($lecturer_credentials[$username] != $password) {
-            header('WWW-Authenticate: Basic realm="Private Area"');
-            header('HTTP/1.0 401 Unauthorized');
-            return array(
-                'username' => null,
-                'type' => null,
-                'message' => 'Password is wrong'
-            );
-        }
-
-        // Check the type of user
-        $type = $username == '000000000' ? 'admin' : (array_key_exists($username, $student_credentials) ? 'student' : 'lecturer');
-
-        // Return user and type.
-        return array(
-            'username' => $username,
-            'type' => $type,
-            'message' => 'Verified'
-        );
     }
 }
