@@ -7,7 +7,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="Private Area"');
     header('HTTP/1.0 401 Unauthorized');
     echo json_encode(
-        array('message' => 'Please use your credentials.')
+        array('message' => 'Please use your credentials. MTCHEWWWW')
     );
     exit;
 }
@@ -61,6 +61,15 @@ try {
     $dashboard_data['user'] = array();
     $dashboard_data['courses'] = array();
 
+    // Get user's data
+    if ($user['type'] == 'student') {
+        $dashboard_data['user'] = $students->get_student($username);
+        $dashboard_data['type'] = 'student';
+    } else {
+        $dashboard_data['user'] = $lecturers->get_lecturer($username);
+        $dashboard_data['type'] = 'lecturer';
+    }
+
     // Get validated user's courses
     $course_list = $courses->get_course($username, $user['type']);
 
@@ -80,13 +89,6 @@ try {
 
         // Add the course to the array of courses
         array_push($dashboard_data['courses'], $course);
-    }
-
-    // Get user's data
-    if ($user['type'] == 'student') {
-        $dashboard_data['user'] = $students->get_student($username);
-    } else {
-        $dashboard_data['user'] = $lecturers->get_lecturer($username);
     }
 
     // Output data
