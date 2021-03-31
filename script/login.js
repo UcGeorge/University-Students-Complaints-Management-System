@@ -17,25 +17,26 @@ class Login {
 	}
 
 	onSubmitLogIn = () => {
-		{ logInMatric, logInPassword } = this.state;
+		const { logInMatric, logInPassword } = this.state;
 		console.log("submitting new student with email " + logInMatric);
 		const matricEncode =  window.btoa(logInMatric);
 		const passwordEncode =  window.btoa(logInPassword);
 		//Check hosting
-		fetch('http://localhost/phpmyadmin/script/login.php', {
+		fetch('http://http://localhost/api/api/dashboard.php', {
 			method: 'post',
 			//headers: {'Content-Type' : 'application/json'},
-			headers: {matricEncode : passwordEncode},
+			headers: {'Authorization' : matricEncode : passwordEncode},
 			body:JSON.stringify({
-				email: logInMatric,
+				mat_no: logInMatric,
 				password: logInPassword
 			})
 		}).then(response => response.json())
 		.then(student => {
-			if(student.matric) {
-				var newStudent = new Dashboard(student);
-				newStudent.loadStudent(student);				
-				newStudent.onRouteChange('studentDashboard');
+			if(student.mat_no) {
+				const tudent = new Dashboard(student);
+				window.location.replace('studentPage.html');
+				//document.location.href = "studentPage.html";
+				//window.location = "studentPage.html";
 			}
 		})
 	}

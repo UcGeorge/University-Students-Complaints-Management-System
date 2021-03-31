@@ -1,28 +1,37 @@
 const initialState = {
 	student: {
-		matric_no: '',
-		email: '',
+		mat_no: '',
 		name: '',
-		courses: [],
+		department: '',
+		year: '',
+		password: '',
 	},
+	courses: [],
 	route: 'login',
+	type: ''
 	// isLoggedIn: false
 }
 
 class Dashboard {
-	state = initialState;
+	
+	let state = initialState;
 	
 	constructor(data) {
-		this.state.student = data;
 		this.state.route = 'dashboard';
+		this.state.student.mat_no = data.user.mat_no;
+		this.state.student.name = data.user.name;
+		this.state.department = data.user.department;
+		this.state.student.year = data.user.year;
+		this.state.courses = data.courses;
 	}
+
 
 	addName = () => {
 		const studentName = document.querySelector("#name");
 		studentName.appendChild(document.createTextNode(this.state.student.name));
 	}
 
-	createCourseCard = () => {
+	createCourseCard = (course_name, course_img, active, personal) => {
 		const courses = document.querySelector("#courses");
 		const courseCard = document.createElement("div");
 		courseCard.classList.add("course-card");
@@ -54,6 +63,11 @@ class Dashboard {
 		courses.appendChild(courseCard);
 	}
 
+	addCourseCard() {
+		for (var i = 0; i < this.state.courses.length; i++) {
+			creareCourseCard();
+		}
+	}
 	// addCourses = () => {
 
 	// }
