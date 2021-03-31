@@ -1,15 +1,13 @@
 class Login {
 	constructor() {
 		this.state = {
-			logInEmail: '',
+			logInMatric: '',
 			logInPassword: ''
 		}
 	}
 	
-	
-
-	onEmailChange = event => {
-		this.state.logInEmail = event.target.value;
+	onMatricChange = event => {
+		this.state.logInMatric = event.target.value;
 		//console.log(event.target.value);
 	}
 
@@ -19,23 +17,30 @@ class Login {
 	}
 
 	onSubmitLogIn = () => {
-		console.log("submitting new student with email " + this.state.logInEmail);
-
-		fetch('login.php', {
+		const { logInMatric, logInPassword } = this.state;
+		console.log("submitting new student with email " + logInMatric);
+		const matricEncode =  window.btoa(logInMatric);
+		const passwordEncode =  window.btoa(logInPassword);
+		//Check hosting
+		fetch('http://http://localhost/api/api/dashboard.php', {
 			method: 'post',
-			headers: {'Content-Type' : 'application/json'},
+			//headers: {'Content-Type' : 'application/json'},
+			headers: {'Authorization' : matricEncode : passwordEncode},
 			body:JSON.stringify({
-				email: this.state.logInEmail,
-				password: this.state.signInPassword
+				mat_no: logInMatric,
+				password: logInPassword
 			})
 		}).then(response => response.json())
 		.then(student => {
-			if(student.matric) {
-				loadStudent(student);
-				onRouteChange('studentDashboard');
+			if(student.mat_no) {
+				const tudent = new Dashboard(student);
+				window.location.replace('studentPage.html');
+				//document.location.href = "studentPage.html";
+				//window.location = "studentPage.html";
 			}
 		})
 	}
 }
 
 var newStudent = new Login();
+
