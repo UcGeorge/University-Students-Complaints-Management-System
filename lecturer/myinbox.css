@@ -1,0 +1,311 @@
+/******  My Inbox ******/
+
+/******** mbody *******/
+
+.mbody{
+	position: relative;
+
+	padding: 10px 0px;
+	border: 1px solid yellow;
+	background-color: white;
+}
+
+.littlenav{
+	margin-bottom: 10px;
+}
+.littlenav a{
+	text-decoration: none;
+	color: #555;
+	font-size: 13px;
+
+}
+
+.fa-chevron-right{
+	margin: 0px 3px 0px 7px;
+	color:#bfbfbf;
+	font-size: 11px;
+}
+
+
+
+/*********  left side **********/
+.leftside{
+	
+	
+	
+	width: 13%;
+	border: 1px solid green;
+}
+
+/**** Back div ****/
+
+.backdiv a{
+
+	margin-left: 2px;
+	text-decoration: none;
+	color: #a81600; 
+	font-size: 11px;
+}
+
+
+.backdiv {
+	
+	color: #a81600; 
+	font-size: 11px;
+}
+
+/**** My inbox div ****/
+
+.myinboxdiv{
+	padding: 0px 0px 40px 30px;
+}
+
+.myinboxdiv p{
+	color: #444;
+	font-size: 18px;
+}
+
+
+.myinboxdiv span{
+	font-size: 12px;
+}
+
+
+.coursewords{
+	color: #555;
+	margin-bottom: 10px;
+}
+.ocircle{
+	display: inline-block;
+	
+height: 12px;
+ width: 12px;
+ 
+  background-color: orange;
+  border-radius: 50%;
+	
+}
+
+.bcircle{
+	display: inline-block;
+	
+ height: 12px;
+ width: 12px;
+ 
+  background-color: blue;
+  border-radius: 50%;
+	
+}
+
+.onumber{
+	color: orange;
+	margin-right: 13px;
+}
+
+.bnumber{
+	color: blue;
+	margin-right: 13px;
+}
+
+
+
+
+
+/**** side div ****/
+.sidediv{
+	border: 1px solid red;
+	font-size: 11px;
+
+	
+	
+
+}
+
+.catgrydiv{
+	/*border: 1px solid blue;*/
+	margin: 18px 5px ;
+	color: #a81600; 
+
+}
+
+.catgrydiv h4{
+	margin: 5px 0px;
+	
+
+}
+
+
+.catgrydiv p{
+	margin: 5px 0px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+
+
+.blankcircles{
+	cursor: pointer;
+	display: inline-block;
+
+ 	border: 1px solid #a81600; 
+ height: 12px;
+ width: 12px;
+  border-radius: 50%;
+	margin-right: 5px;
+}
+
+
+.currentbcirc{
+	cursor: pointer;
+	display: inline-block;
+	/*height: 5px;
+ width: 5px;*/
+ padding: 3px;
+ 	background-color: white;
+ 	padding: auto;
+  border: 3px solid #a81600; 
+  border-radius: 50%;
+	margin-right: 5px;
+
+}
+
+/*.blankcircle{
+	height: 7px;
+	width: 7px;
+	border: 1px solid white;
+	margin: auto;
+
+	
+ 	background-color: white;
+  
+  border-radius: 100%;
+}*/
+
+
+
+/*********  right side **********/
+.rightside{
+	
+	
+	
+	width: 60%;
+	border: 1px solid red;
+}
+
+
+
+/**** search div ****/
+.searchdiv{
+	
+margin-top: -10px;
+margin-left: 596px; 
+/*border: 1px solid grey;*/
+margin-bottom: 20px;
+
+	
+
+}
+
+
+.sinput{
+	border: none;
+	border: 1px solid grey;
+	border-radius: 9px;
+	background-color: #f2f2f2;
+	padding: 5px 10px 5px 40px;
+	background-image: url("images/searchicon.png");
+	background-position: 5px 5px;
+	background-repeat: no-repeat;
+	outline: none;
+	
+	font-size: 15px;
+	
+}
+
+
+
+/**** complaint div ****/
+
+.complntdiv{
+	
+	/*border: 1px solid grey;*/
+
+	
+
+}
+
+
+.complaintbox{
+	border: 1px solid grey;
+	width: 80%;
+	margin: 0px 30px;
+	
+
+}
+
+.boxhead{
+	background-color: #f2f2f2;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.fa-exclamation-circle{
+	margin-right: 5px;
+
+}
+
+.boxgan{
+	padding: 30px;
+	border-top: 1px solid grey;
+
+}
+
+.secone{
+	/*border: 1px solid yellow;*/
+}
+
+.shead{
+	/*border: 1px solid blue;*/
+}
+
+.secomhead{
+	color: #444;
+	padding-left: 10px; 
+}
+
+.problem{
+	/*border: 1px solid red;*/
+	float: right;
+	color: #a81600; 
+	font-size: 11px;
+	margin-top: -20px;
+
+}
+
+
+.seccomp{
+	
+	color: #555;
+}
+
+
+.secthree{
+	/*border: 1px solid yellow;*/
+}
+
+.seccourse{
+	/*border: 1px solid blue;*/
+	color: #a81600; 
+	font-size: 14px;
+}
+
+.sectime{
+	/*border: 1px solid red;*/
+	font-size: 11px;
+	color: #a81600; 
+	float: right;
+	margin-top: -20px;
+}
+
+
+

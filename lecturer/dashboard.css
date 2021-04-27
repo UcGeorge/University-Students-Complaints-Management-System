@@ -1,0 +1,108 @@
+/******  Dashboard ******/
+
+
+/******** mbody *******/
+
+.mbody{
+	padding: 20px 30px;
+	
+	background-color: white;
+}
+
+
+
+.littlenav a{
+	text-decoration: none;
+	color: #555;
+	font-size: 13px;
+
+}
+
+.fa-chevron-right{
+	margin: 0px 3px 0px 7px;
+	color:#bfbfbf;
+	font-size: 11px;
+}
+
+
+
+/***** Available courses *****/
+
+.availcourse{
+	padding: 60px;
+
+}
+
+.coursediv{
+	text-decoration: none;
+	/*border: 1px solid green;*/
+	display: inline-block;
+	margin: 30px 32px;
+	height: 300px;
+	width: 270px;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+.coursediv:hover{
+
+	box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.19), 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.coursepic{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	background-image: url("images/coursepic.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	
+	background-size: cover;
+
+	height: 150px;
+
+}
+
+.coursedets{
+	text-align: center;
+	padding: 10px;
+	font-size: 13px;
+}
+
+
+.coursedets p{
+	font-size: 17px;
+	color: #555;
+}
+
+.coursewords{
+	color: #555;
+	margin-bottom: 10px;
+}
+.ocircle{
+	
+ padding: 0.2px 7.5px;
+ 
+  background-color: orange;
+  border-radius: 50%;
+	margin-right: 5px;
+}
+
+.bcircle{
+	
+ padding: 0.2px 7.5px;
+ 
+  background-color: blue;
+  border-radius: 50%;
+	margin-right: 5px;
+}
+
+.onumber{
+	color: orange;
+	margin-right: 13px;
+}
+
+.bnumber{
+	color: blue;
+	margin-right: 13px;
+}
+
