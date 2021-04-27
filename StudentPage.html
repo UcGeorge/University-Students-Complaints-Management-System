@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,35 +6,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	
-	<title>A Page</title>
+	<title>Complaint Dashboard</title>
 	
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Nerko+One&display=swap" rel="stylesheet"> -->
 </head>
 <body>
+	<script type="text/javascript" src="login.js"></script>
+	<script type="text/javascript" src="studentPage.js"></script>
 	<div class=" container box">
 		<!-- SOCIAL STUFF -->
-		<div class="container-fluid socials"> 
+		<div class="container socials"> 
 			<div class="row"> 
-				<div class="col-sm-3 col-lg-4"> 
-					<i class="far fa-bookmark"></i>&nbsp;<a href="https://unilag.edu.ng">https://unilag.edu.ng </a>
+				<div class="social-item col-sm-3 col-md-3 col-lg-2">
+					<a href="https://unilag.edu.ng">https://unilag.edu.ng &nbsp </a>
 				</div>
 
-				<div class="col-sm-5 col-lg-4">
-					<i class="far fa-envelope"></i>&nbsp;<a href="mailto:communicationsunit@unilag.edu.ng">mailto:communicationsunit@unilag.edu.ng </a>
+				<div class="social-item col-sm-5 col-md-5 col-lg-6">
+					<a href="mailto:communicationsunit@unilag.edu.ng">communicationsunit@unilag.edu.ng </a>
 				</div>
 
-				<div class="col-sm-4 col-lg-4 justify-content-sm-right">
-					<a href="">facebook</a>
-					<a href="">twitter</a>
-					<a href="">instagram</a>
+				<div class="col-sm-4 col-md-4 col-lg-4 justify-content-right">
+					<a href="https://web.facebook.com/OfficialUniversityOfLagos">facebook</a>
+					<a href="https://twitter.com/UnilagNigeria">twitter</a>
+					<a href="https://www.instagram.com/unilagnigeria">instagram</a>
 				</div>
 			</div>
-
-		<hr>
+		</div>
 
 		<header id="page-header" class="">
 			<div class=" container-fluid">
@@ -47,83 +49,59 @@
 
 					<!-- USER INFORMATION -->
 					<div class="col-sm-6 col-lg-4 justify-content-md-right">
-						<div class="user_info">
-							<h2>Name Name Name <img src="" alt="pic of person"></h2>
-						</div>
+							<div class="user_info">
+								<h2 id="name"> Faux Name <img src="" alt="pic"></h2>
+							</div>
 					</div>
 				</div>
 			</div>
 		</header>
 
-		<header class="navbar">
+		<nav class="navbar navbar-toggleable-sm">
+			<div class="container navbar-inner">
+				<a class=" brand navbar-brand" href="" >UNILAG-CMS</a>
+				<button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav"> 
+					<span class="navbar-toggler-icon"></span>
+					<!-- <p>blue</p> -->
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav"> 
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="">My Complaint
+						</a>
+						<a class="nav-item nav-link" href="">My Courses
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- <nav class="nav justify-content-center flex-column flex-md-row">
 			<div class="container-fluid">
-				<p href="https://vlearn.unilag.edu.ng/cms" class="brand">UNILAG-CMS</p>
-				<p>My Complaints</p>
-				<p>My Courses</p>
+				<a class="nav-link" href="">My Complaints</a>
+				<a class="brand nav-link" href="">My Courses</a >
 				<img src="" alt="search button">
 			</div>
-		</header>
+		</nav> -->
 
 		<!-- COURSES -->
-		<div>
-			<div class="container">
-				<div class="row">
+		
+		<div class="container">
+			<div class="row">
+				<div id = courses>
 					<div class="course-card">
 						<img src="https://vlearn.unilag.edu.ng/pluginfile.php/1/theme_lambda/logo/1612453226/android-chrome-192x192.png" class="img-responsive"alt="logo"><br>
-						<div class="content">
+						<div class="course-card-details">
 							<h2>General</h2>
 							<p class="active_compaints"> active </p>
 							<p class="personal_compaints"> personal </p>
 						</div>
 					</div>
-
-					<div class="course-card">
-						<img src="" alt="logo"><br>
-						<div class="content">
-							<h2>Web</h2>
-							<p class="active_compaints"> active </p>
-							<p class="personal_compaints"> personal </p>
-						</div>
-					</div>
-
-					<div class="course-card">
-						<img src="" alt="logo" ><br>
-						<div class="content">
-							<h2>Other Shit</h2>
-							<p class="active_compaints"> active </p>
-							<p class="personal_compaints"> personal </p>
-						</div>
-					</div>
-
-					<div class="course-card">
-						<img src="" alt="logo" ><br>
-						<div class="content">
-							<h2>More Shit</h2>
-							<p class="active_compaints"> active </p>
-							<p class="personal_compaints"> personal </p>
-						</div>
-					</div>
-
-					<div class="course-card">
-						<img src="" alt="logo" ><br>
-						<div class="content">
-							<h2>Another Shit</h2>
-							<p class="active_compaints"> active </p>
-							<p class="personal_compaints"> personal </p>
-						</div>
-					</div>
-
-					<div class="course-card">
-						<img src="" alt="logo" ><br>
-						<div class="content">
-							<h2>Final Shit</h2>
-							<p class="active_compaints"> active </p>
-							<p class="personal_compaints"> personal </p>
-						</div>
-					</div>
+					<!--  -->
 				</div>
 			</div>
 		</div>
+
+
+
 
 		<footer id="page-footer" class="container-fluid">
 					<div class="row-fluid">
@@ -139,6 +117,8 @@
     </div>
 
  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
 
