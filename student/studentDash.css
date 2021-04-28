@@ -1,0 +1,394 @@
+/********* General CSS**********/
+*{
+	box-sizing: border-box;
+}
+
+body{
+
+	font-family: "Open Sans",sans-serif;
+
+	margin: 0px;
+	padding: 0px;
+
+
+	background-image: url("images/backgroundblur.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+}
+
+
+
+/******** #body *******/
+
+#body{
+	margin: 30px 70px 0px 70px;
+}
+
+
+/******** head *******/
+
+.head{
+	border-top: 4px solid #8E1300;
+	height: 40px;   /* you might want to remove this later */
+	padding: 8px;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #d9d9d9;
+	font-size: 13px;
+   
+}
+
+.leftlink a{
+	text-decoration: none;
+	color:  #a9a9a9;
+	margin: 0px 10px;
+
+}
+
+.fa-bookmark{
+	margin-right: 5px;
+	font-size: 1.35em;
+}
+
+.fa-envelope{
+	margin-right: 5px;
+	font-size: 1.35em;
+}
+
+
+
+
+.socials{
+	float: right;
+	margin-right: 8px;
+	margin-top: -20px;
+
+}
+
+.socials a{
+	color:  #a9a9a9;
+	margin: 0px 10px;
+	text-decoration: none;
+}
+
+.fa-instagram{
+	font-size: 1.35em;
+}
+
+.fa-twitter{
+	font-size: 1.35em;
+}
+
+.fa-facebook{
+	font-size: 1.35em;
+}
+
+
+
+/******** profile *******/
+.profile{
+	background-color: #fff;
+	
+	padding: 20px;
+
+}
+
+.logo img{
+
+	max-height: 90px;
+	max-width: 100%;
+
+}
+
+
+.iconname{
+	float: right;
+	
+	
+
+	/*border: 1px solid red;*/
+
+}
+
+.username{
+	top: -48px;
+	padding: 0px 20px;
+	display: inline-block;
+	position: relative;
+	/*border: 1px solid red;*/
+}
+
+.username img{
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+	margin-right: 5px;
+	margin-bottom: -3px;
+}
+
+.username p{
+	color: #8E1300; 
+	display: inline-block;
+	margin-right: 3px;
+}
+
+
+
+.triangle-downs {
+	cursor: pointer;
+	position: absolute;
+	top: 22px;
+	right:10px;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #555;
+}
+
+
+
+.userdrop{
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+	display: none;
+	width: 180px;
+	font-size: 13px;
+	z-index: 2;
+	position: absolute;
+	border: 1px solid #f2f2f2;
+	background-color: white;
+	right: 30px;
+	
+	
+}
+
+.userdrop hr{
+	width: 90%;
+	color:#f2f2f2;
+	height: 0.5px;
+}
+
+.userdrop a{
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color:#444;
+	
+}
+
+.userdrop a:hover{
+	background-color: #f2f2f2;
+}
+
+
+.usericon{
+	display: inline-block;
+	/*border: 1px solid green;*/
+}
+.usericon img{
+	
+	height: 80px;
+	width: 80px;
+}
+
+/******** topnav *******/
+.topnav{
+	background-color:  #292F38 ;
+	height: 50px;
+	font-size: 13px;
+	
+
+
+}
+
+.topnav a{
+	text-decoration: none;
+
+}
+
+.cmsnav {
+	height: 100%;
+	padding: 15px 25px;
+	margin-right: -4px;
+	color: white;
+	display: inline-block;
+	background-color:#8E1300; 
+}
+
+.cmsnav:hover {
+	background-color:#a81600; 
+}
+
+.inboxnav {
+	margin-right: -4px;
+	
+	
+	height: 100%;
+	padding: 15px 25px;
+	color: white;
+	display: inline-block;
+}
+
+.inboxnav:hover {
+	background-color:#a81600; 
+}
+
+
+.coursesnav {
+	margin-right: -4px;
+	position: relative;
+	
+	height: 100%;
+	padding: 15px 25px;
+	color: white;
+	display: inline-block;
+}
+
+.coursesnav:hover {
+	background-color:#a81600; 
+}
+
+
+.triangle-down {
+	position: absolute;
+	top: 20px;
+	right:13px;
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #fff;
+}
+
+
+.dropdown{
+	z-index: 1;
+	display: none;
+	position: absolute;
+	border-bottom: 4px solid #8E1300;
+	background-color: #f2f2f2;
+	left: 302px;
+	width: 160px;
+
+
+
+}
+
+.triangle-up {
+	position: absolute;
+	top:-5px;
+	left: 70px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #f2f2f2;
+}
+
+
+.dropdown a{
+	color: #444;
+	padding: 12px 15px;
+	border-bottom: 1px solid grey;
+	display: block;
+}
+
+.dropdown a:hover{
+	color: white;
+	background-color: #a81600; 
+	border-bottom: none;
+	
+}
+.searchbtn{
+	float: right;
+	height: 100%;
+	color: white;
+	
+	display: inline-block;
+}
+
+.hoverinput{
+	display: none;
+	color: white;
+
+	
+}
+
+.shinput{
+
+	
+
+	padding: 17px 20px;
+	margin-right: -4px;
+	border: none;
+	background-color:#343b46; 
+	color:white;
+	outline: none;
+	font-style: italic;
+
+
+
+}
+
+.shinput:focus{
+  border: none;
+}
+
+
+
+.searchsub{
+	background-image: url("images/icon-search.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	/*background-attachment: fixed;*/
+	/*background-size: cover;*/
+	background-color:#8E1300; 
+	height: 50px;
+	width: 50px;
+	border: none;
+}
+
+.searchsub:hover{
+	
+	background-color:#a81600; 
+	cursor: pointer;
+	
+}
+
+
+
+
+/******** mbody *******/
+
+.mbody{
+	background-color: white;
+}
+
+.course-card{
+	width: 250px;
+	height: 300px;
+	margin: 20px;
+ 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	justify-content: center ;
+}
+
+/******** foot *******/
+
+.foot{
+	border-top: 4px solid #8E1300;
+	height: 40px;  /* you might want to remove this later */
+	padding: 10px 20px;
+	background-color: #292F38 ;
+	font-size: 13px;
+	color: #bdc3c2; 
+}
+
+
+.footspan{
+	color: white;
+}
+
+

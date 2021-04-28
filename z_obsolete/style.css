@@ -1,0 +1,91 @@
+body{
+	/*.pagelayout-login.login_lambda */
+    background: url(https://vlearn.unilag.edu.ng/theme/image.php/lambda/theme/1612453226/page_bg/page_bg_blur02) no-repeat fixed 0 0;
+    background-size: cover;
+}
+
+a{
+    cursor: pointer;
+}
+
+.box{
+    /*background-clip: padding-box;*/
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 8px solid rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+.socials a{
+	/*color: #8E1300;*/
+    text-decoration: none;
+    color: #a9a9a9
+}
+
+.social-item{
+    padding: 0px 40px 0px 0px;
+}
+
+.float-right{
+	float: right;
+}
+
+#page-header {
+    padding: 5px;
+    background: #fff;
+}
+
+.logo img {
+    max-height: 90px;
+}
+
+.navbar-inner {
+    background: #3A454b;
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    filter: none!important;
+    background-image: none;
+}
+
+.brand {
+    color: #fff;
+    text-shadow: none;
+    line-height: 30px;
+    font-size: 1em;
+    background: #8E1300;
+    padding: 10px 20px;
+    font-weight: 200;
+}
+
+/*.navbar .brand {
+    float: left;
+    display: block;
+    padding: 10px 20px;
+    font-weight: 200;
+}*/
+
+.img-responsive/* .img-fluid*/ {
+    max-width: 100%;
+    /*width: auto\9;*/
+    height: auto;
+}
+
+.course-card{
+	width: 250px;
+	height: 300px;
+	margin: 20px;
+ 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	justify-content: center;
+}
+
+/* On mouse-over, add a deeper shadow */
+/*.course-card :hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}*/
+
+.course-card > .course-card-details {
+  padding: 2px 16px;
+}
