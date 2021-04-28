@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 	<meta charset="utf-8">
@@ -7,7 +8,7 @@
 
 	<link rel="stylesheet" type="text/css" href="studentDash.css">
 	<link rel="stylesheet" type="text/css" href="dashboard.css">
-	
+
 	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
 </head>
 
@@ -30,7 +31,8 @@ $user_data = $user['user'];
 $course_data = $user['courses'];
 
 // Display the myraid courses using a template
-function display_courses() {
+function display_courses()
+{
 	// Declare global variables
 	global $user_data, $course_data, $course_img;
 
@@ -65,7 +67,8 @@ function display_courses() {
 	}
 }
 
-function course_menu() {
+function course_menu()
+{
 	// Declare global variables
 	global $user_data, $course_data, $course_img;
 
@@ -73,9 +76,7 @@ function course_menu() {
 	foreach ($course_data as $course) {
 		// Assign useful variables needed for display
 		$course_name = $course['course_title'];
-		echo '
-			<a href="">' $course_name '</a>
-		';
+		echo "<a href=''>$course_name</a>";
 	}
 }
 ?>
@@ -84,165 +85,164 @@ function course_menu() {
 
 	<div id="body">
 
-	<!------- top Social links ------->
+		<!------- top Social links ------->
 
-	<div class="head">
+		<div class="head">
 
-		<!-- left link -->
-		<div class="leftlink">
-		<a href=""><i class="far fa-bookmark"></i>https://unilag.edu.ng</a>
-		<a href=""><i class="far fa-envelope"></i>communicationsunit@unilag.edu.ng</a>
+			<!-- left link -->
+			<div class="leftlink">
+				<a href=""><i class="far fa-bookmark"></i>https://unilag.edu.ng</a>
+				<a href=""><i class="far fa-envelope"></i>communicationsunit@unilag.edu.ng</a>
+			</div>
+
+			<!-- right socials -->
+			<div class="socials">
+				<a href=""><i class="fab fa-facebook"></i></a>
+				<a href=""><i class="fab fa-twitter"></i></a>
+				<a href=""><i class="fab fa-instagram"></i></a>
+			</div>
+
+
 		</div>
 
-		<!-- right socials -->
-		<div class="socials">
-			<a href=""><i class="fab fa-facebook"></i></a>
-			<a href=""><i class="fab fa-twitter"></i></a>
-			<a href=""><i class="fab fa-instagram"></i></a>
-		</div>
-		
-		
-	</div>
-	
 
-	<!------- profiles names and logos ------->
-	<div class="profile">
+		<!------- profiles names and logos ------->
+		<div class="profile">
 
-		<!-- unilag logo and home button -->
-		<a href="dashboard.html" class="logo">
-			<img src="images/unilaglogo.png" >
-		</a>
+			<!-- unilag logo and home button -->
+			<a href="dashboard.html" class="logo">
+				<img src="images/unilaglogo.png">
+			</a>
 
-		<!-- user icon and name -->
-		<div class="iconname">
+			<!-- user icon and name -->
+			<div class="iconname">
 
-			<div class="username">
-				<img src="images/notifications.svg">
-				<p><b>
-					<?php
-						echo $user_data=>name;
-					?>
-				</b></p>
-				<i onclick="showhide();" class="triangle-downs"></i>
+				<div class="username">
+					<img src="images/notifications.svg">
+					<p><b>
+							<?php echo $user_data['name']; ?>
+						</b></p>
+					<i onclick="showhide();" class="triangle-downs"></i>
 
-				<!-- user dropdown -->
+					<!-- user dropdown -->
 					<div class="userdrop">
 						<a href="">
 							<i class="fas fa-tachometer-alt"></i>
 							Dashboard
-							
+
 						</a>
 						<hr>
 
 						<a href="">
 							<i class="fas fa-inbox"></i>
 							My Inbox
-							
+
 						</a>
 
 						<a href="">
 							<i class="fas fa-book"></i>
 							My Courses
-							
+
 						</a>
 						<hr>
 						<a href="">
 							<i class="fas fa-sign-out-alt"></i>
 							Logout
-							
+
 						</a>
 					</div>
-				<!--  -->
+					<!--  -->
+				</div>
+
+				<div class="usericon">
+					<img src="images/usericon.png">
+				</div>
+
 			</div>
 
-			<div class="usericon">
-				<img src="images/usericon.png">
-			</div>
-			
 		</div>
-		
-	</div>
-	
 
 
 
-	<!------- top navigation ------->
 
-	<div class="topnav">
+		<!------- top navigation ------->
 
-		<!-- CMS nav -->
-		<a href="" class="cmsnav">
-			<span>UNILAG-CMS</span>
-			
-		</a>
+		<div class="topnav">
 
-		<!-- My inbox nav -->
-		<a href="" class="inboxnav">
-			<span>My Inbox</span>
-			
-		</a>
+			<!-- CMS nav -->
+			<a href="" class="cmsnav">
+				<span>UNILAG-CMS</span>
 
-		<!-- My Courses nav -->
-		<a href="" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
-			<span>My Courses </span><i class="triangle-down"></i>
-			
-		</a>
+			</a>
 
-		<!-- drop down div -->
-		
-		<div class="dropdown" onmouseover="mOver()" onmouseout="mOut()">
-			
-			<i class="triangle-up"></i>
-			<?php
+			<!-- My inbox nav -->
+			<a href="" class="inboxnav">
+				<span>My Inbox</span>
+
+			</a>
+
+			<!-- My Courses nav -->
+			<a href="" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
+				<span>My Courses </span><i class="triangle-down"></i>
+
+			</a>
+
+			<!-- drop down div -->
+
+			<div class="dropdown" onmouseover="mOver()" onmouseout="mOut()">
+
+				<i class="triangle-up"></i>
+				<?php
 				course_menu();
-			?>
+				?>
 
-			<!-- 
+				<!-- 
 			<a href="">CSC434</a>
 			<a href="">CSC434</a>
 			<a href="">CSC434</a>
 			<a href="">CSC434</a> -->
+			</div>
+
+
+			<!-- search button -->
+			<div class="searchbtn">
+
+				<!-- hover search input -->
+				<form>
+					<div class="hoverinput" onmouseover="hOver()" onmouseout="hOut()">
+						<input class="shinput" type="text" name="" placeholder="search complaints">
+					</div>
+					<input class="searchsub" type="submit" name="" value="" onmouseover="hOver()" onmouseout="hOut()">
+				</form>
+
+			</div>
+
 		</div>
 
 
-		<!-- search button -->
-		<div class="searchbtn">
 
-			<!-- hover search input -->
-			<form>
-				<div class="hoverinput" onmouseover="hOver()" onmouseout="hOut()">
-					<input class="shinput" type="text" name="" placeholder="search complaints">	
-				</div>
-				<input class="searchsub" type="submit" name="" value=""  onmouseover="hOver()" onmouseout="hOut()">
-			</form>
-	
+
+		<!-------- body ------->
+
+		<div class="mbody">
+			<!-- Display courses -->
+			<?php
+			display_courses();
+			?>
 		</div>
-		
-	</div>
-
-	
-
-
-	<!-------- body ------->
-
-	<div class="mbody">
-		<!-- Display courses -->
-		<?php 
-			display_courses(); 
-		?>	
-	</div>
-	
 
 
 
-	<!------- footer -------->
-	<div class="foot">
-		<span>© 2021. All Rights Reserved | Design by <span class="footspan">CSC405 - PROJECT GROUP7</span> </span>
-	</div>
+
+		<!------- footer -------->
+		<div class="foot">
+			<span>© 2021. All Rights Reserved | Design by <span class="footspan">CSC405 - PROJECT GROUP7</span> </span>
+		</div>
 
 	</div>
 
 	<script type="text/javascript" src="gen.js"></script>
 
 </body>
+
 </html>
