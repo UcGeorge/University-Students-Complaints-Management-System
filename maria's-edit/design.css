@@ -3,12 +3,12 @@
   padding: 0;
 }
 body{
-	
+
 	background:url('img/bg-gradient.png');
 	background-size: contain;
 	background-repeat: repeat-x;
 	height:100vh;
-
+  /**/
 }
 
 .fit{
@@ -69,27 +69,27 @@ body{
 
 
 a:link, a:visited {
-    
+
     color: white;
     padding: 16px 25px;
-    text-align: center;	
+    text-align: center;
     text-decoration: none;
     display: inline-block;
 }
  a:hover {
    background-color: #990000;
-  
+
 }
 
-.standby{ 
+.standby{
 	background-color: #8e1300;
 	text-align: center;
-	
+
  }
 
  .b{
  	padding: 8px;
- 	margin-left:2px; 
+ 	margin-left:2px;
  }
  .end{
  	background-color: white;
@@ -97,7 +97,7 @@ a:link, a:visited {
  	width: 100%;
  }
 .manquee{
-	
+
 	background-color: black;
 	height: 5px;
 	width: 100%;
@@ -108,7 +108,7 @@ a:link, a:visited {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
+
  }
 
 .main{
@@ -134,7 +134,7 @@ a:link, a:visited {
 	margin:4% auto;
 	position: relative;
 	background:#eee;
-	
+
 	padding: 15px;
 }
 
@@ -173,7 +173,7 @@ a:link, a:visited {
 	top:40px;
 	position: absolute;
 	padding-left: 6px;
-	
+
 	width: 300px;
 }
 .checkbox{
@@ -193,9 +193,9 @@ span{
 	padding: 10px 5px;
 	margin: 15px;
 	border: 0;
-	
-	
-	
+
+
+
 }
 #student{
 	left:0px;
