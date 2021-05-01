@@ -8,6 +8,20 @@
     <link rel="stylesheet" type="text/css" href="style/design.css">
 </head>
 
+<?php
+
+session_start();
+
+if (isset($_POST['student'])) {
+    $_SESSION['user-type'] = 'student';
+    header("Location: login\login.php");
+}
+if (isset($_POST['staff'])) {
+    $_SESSION['user-type'] = 'staff';
+    header("Location: login\login.php");
+}
+?>
+
 <body>
 
     <div class="section">
@@ -18,10 +32,11 @@
                 <img id="pic" src="assets/img/logo.png" align="left">
                 <div class="p">
                     <h4>LOG IN USING ACCOUNTS BELOW:</h4><br>
-                    <button class="b"> STUDENT LOGIN</button>
-                    <button class="b"> STAFF LOGIN</button></p>
+                    <form method="post">
+                        <input class="b" type="submit" name="student" value="STUDENT LOGIN" />
+                        <input class="b" type="submit" name="staff" value="STAFF LOGIN" />
+                    </form>
                 </div>
-
             </div>
 
             <div class="four">
