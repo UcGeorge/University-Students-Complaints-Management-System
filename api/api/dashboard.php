@@ -60,6 +60,7 @@ try {
     $dashboard_data = array();
     $dashboard_data['user'] = array();
     $dashboard_data['courses'] = array();
+    $dashboard_data['message'] = "Validated";
 
     // Get user's data
     if ($user['type'] == 'student') {
