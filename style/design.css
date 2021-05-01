@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url('img/bg-gradient.png');
+    background: url('../assets/img/bg-gradient.png');
     background-size: contain;
     background-repeat: repeat-x;
     height: 100vh;
