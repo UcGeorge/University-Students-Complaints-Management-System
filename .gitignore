@@ -1,2 +1,3 @@
 
 api/api/test_login.py
+*.json
