@@ -139,7 +139,7 @@ if ($process_login) {
         <div class="fill">
             <form method="post" class="form-info" id="student" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <input type="text" name="id" value="<?php echo $userID; ?>" class="input-field" placeholder="<?php echo $id_placeholder; ?>">
-                <input type="password" name="password" value="<?php echo $password; ?>" class="input-field" placeholder="Enter Password">
+                <input type="password" name="password" value="<?php echo $password; ?>" class="input-field" placeholder="Password">
                 <input type="checkbox" class="checkbox"><span>Remember Password</span>
                 <div class="button">
                     <input type="submit" class="lbutton" value="Log In">
