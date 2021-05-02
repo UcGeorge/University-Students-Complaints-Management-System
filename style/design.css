@@ -209,5 +209,7 @@ span {
     text-indent: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
     /* padding-left: 10px; */
 }

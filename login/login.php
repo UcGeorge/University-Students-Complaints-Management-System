@@ -98,6 +98,11 @@ if ($process_login) {
 
     // echo $response;
 
+    if ($user_type != $dashboard_data['type']) {
+        $IDErr = "User is not a $user_type, use the {$dashboard_data['type']} login portal.";
+        $dashboard_data['message'] = 'not verified';
+    }
+
     if ($dashboard_data['message'] == $VERIFIED) {
         // Set session variables
         $_SESSION["auth"] = 'Authorization: Basic ' . base64_encode($userID . ':' . $password);
@@ -125,7 +130,8 @@ if ($process_login) {
 <body>
     <img src="../assets/img/logoo.png" class="center">
     <div class="main">
-        <h2>UNILAG CMS</h2>
+        <h2>UNILAG CMS<h2 style="font-weight: lighter;"><?php echo strtoupper($user_type); ?></h2>
+        </h2>
         <div class="error-container">
             <p><?php echo $IDErr; ?></p>
             <p><?php echo $passErr; ?></p>
