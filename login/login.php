@@ -97,11 +97,21 @@ if ($process_login) {
     $dashboard_data = json_decode($response, true);
 
     // echo $response;
-
-    if ($user_type != $dashboard_data['type']) {
-        $IDErr = "User is not a $user_type, use the {$dashboard_data['type']} login portal.";
+    if (isset($dashboard_data['type'])) {
+        if ($user_type != $dashboard_data['type']) {
+            $IDErr = "User is not a $user_type, use the {$dashboard_data['type']} login portal.";
+            $dashboard_data['message'] = 'not verified';
+        }
+    } else {
+        // Show unauthorized error messages if there are any
+        if ($dashboard_data['message'] == $PASSWORD_IS_WRONG) {
+            $passErr = $PASSWORD_IS_WRONG;
+        } else if ($dashboard_data['message'] == $USER_DOES_NOT_EXIST) {
+            $IDErr = $USER_DOES_NOT_EXIST;
+        }
         $dashboard_data['message'] = 'not verified';
     }
+
 
     if ($dashboard_data['message'] == $VERIFIED) {
         // Set session variables
@@ -125,17 +135,25 @@ if ($process_login) {
     }
 }
 
+function show_error()
+{
+    global $passErr, $IDErr;
+    if (isset($IDErr) || isset($passErr)) {
+        echo ("<div class='error-container'>
+            <p>$IDErr</p>
+            <p>$passErr</p>
+        </div>");
+    }
+}
+
 ?>
 
 <body>
     <img src="../assets/img/logoo.png" class="center">
     <div class="main">
-        <h2>UNILAG CMS<h2 style="font-weight: lighter;"><?php echo strtoupper($user_type); ?></h2>
+        <h2>UNILAG CMS<h2 style="font-weight: lighter; margin-bottom: 10px;"><?php echo strtoupper($user_type); ?></h2>
         </h2>
-        <div class="error-container">
-            <p><?php echo $IDErr; ?></p>
-            <p><?php echo $passErr; ?></p>
-        </div>
+        <?php show_error() ?>
         <div class="fill">
             <form method="post" class="form-info" id="student" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <input type="text" name="id" value="<?php echo $userID; ?>" class="input-field" placeholder="<?php echo $id_placeholder; ?>">
