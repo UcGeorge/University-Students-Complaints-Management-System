@@ -3,11 +3,11 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>UNILAG-CMS | My Inbox</title>
+	<title>UNILAG-CMS | Inbox</title>
 
 	<link rel="stylesheet" type="text/css" href="general/gen.css">
 	
-	<link rel="stylesheet" type="text/css" href="myinbox.css">
+	<link rel="stylesheet" type="text/css" href="courseview.css">
 	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
 
 </head>
@@ -49,7 +49,7 @@
 
 			<div class="username">
 				<img src="images/notifications.svg">
-				<p><b>EBUNOLUWA PHILIP FASHINA</b></p>
+				<p><b>IGWE CHIDERA HILARY</b></p>
 				<i onclick="showhide();" class="triangle-downs"></i>
 
 				<!-- user dropdown -->
@@ -174,7 +174,8 @@
 
 		<div class="littlenav">
 			<a href="">Home</a><span class="fas fa-chevron-right"> </span>
-			<a href="">My Course</a>
+			<a href="">My Course</a><span class="fas fa-chevron-right"> </span>
+			<a href="">CSC 422</a>
 			
 		</div>
 
@@ -194,7 +195,7 @@
 
 		<!------------ My Inbox div ------------>
 		<div class="myinboxdiv">
-			<p><b>My Inbox</b></p>
+			<p><b>Data Communiactions</b> - Inbox</p>
 
 					<div class="coursewords">
 						<!-- circle -->
@@ -224,10 +225,22 @@
 		<!---------- side div ----------->
 		<div class="sidediv">
 
+			<!-- Tags -->
+			<div class="catgrydiv">
+				<h4>Tags</h4><br>
+				<span class="sstag"><b><i class="fas fa-plus"></i>registration</b></span>
+				<span class="sctag"><b><i class="fas fa-check"></i>comprehension</b></span>
+				<span class="sctag"><b><i class="fas fa-check"></i>lecturer</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>continous assesment</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>exam</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>project</b></span>
+				<span><b>more...</b></span>
+			</div>
+
 			<!-- category -->
 			<div class="catgrydiv">
 				<h4>Category</h4><br>
-				<div onclick="togglecirc()" class=" currentbcirc"></div>
+				<div class=" currentbcirc"><div class= "blankcircle"></div></div>
 				<p>All categories</p><br>
 
 				<span class="blankcircles "></span>
@@ -238,7 +251,7 @@
 			<!-- status -->
 			<div class="catgrydiv">
 				<h4>Status</h4><br>
-				<div onclick="togglecirc()" class=" currentbcirc"></div>
+				<div class=" currentbcirc"></div>
 				<p>All categories</p><br>
 
 				<div class="blankcircles "></div>
@@ -252,7 +265,7 @@
 			<!-- sort by -->
 			<div class="catgrydiv">
 				<h4>Sort by</h4><br>
-				<div onclick="togglecirc()" class=" currentbcirc"></div>
+				<div class=" currentbcirc"><div class= "blankcircle"></div></div>
 				<p>Date posted(newest first)</p><br>
 
 				<div class="blankcircles "></div>
@@ -303,7 +316,7 @@
 				</div>
 
 				<!-- box gan gan -->
-				<div class="boxgan activebox">
+				<div class="boxgan">
 
 					<!-- section1 -->
 					<div class="secone">
@@ -327,8 +340,10 @@
 
 					<!-- section3 -->
 					<div class="secthree">
-						<div class="seccourse">
-							<span><b>CSC422</b></span>
+						<div class="sectag">
+							<span class="stag"><b>compreshion</b></span>
+							<span class="stag"><b>lecturer</b></span>
+							<span class="stag"><b>registration</b></span>
 						</div>
 						<div class="sectime">
 							<span class="seccompid">#333334</span>
@@ -349,145 +364,7 @@
 
 
 				<!-- box gan gan -->
-				<div class="boxgan closedbox">
-
-					<!-- section1 -->
-					<div class="secone">
-						<div class="shead">
-							<div class="bcircle"></div>
-							<span class="secomhead"><b>Sir, nobody likes the way you lecture</b></span>
-							
-						</div>
-						<div class="problem">
-							<span class="secproblmno">1</span>
-							<span > student has this problem</span>
-						</div>
-					</div>
-
-					<!-- section 2 -->
-					<div class="seccomp">
-						<p>omo bro gbo gbo wa ma le je breakfast!!!!!</p>
-						
-					</div>
-
-
-					<!-- section3 -->
-					<div class="secthree">
-						<div class="seccourse">
-							<span><b>CSC422</b></span>
-						</div>
-						<div class="sectime">
-							<span class="seccompid">#333334</span>
-							<span class="">opened</span>
-							<span class="seccomptime">11 months ago</span>
-							<span>by</span>
-							<span class="seccomperson">Igwe chidodo</span>
-							
-						</div>
-					</div>
-
-
-
-					
-				</div>
-
-
-			<!-- box gan gan -->
-				<div class="boxgan activebox">
-
-					<!-- section1 -->
-					<div class="secone ">
-						<div class="shead">
-							<div class="ocircle"></div>
-							<span class="secomhead"><b>Sir, nobody likes the way you lecture</b></span>
-							
-						</div>
-						<div class="problem">
-							<span class="secproblmno">1</span>
-							<span > student has this problem</span>
-						</div>
-					</div>
-
-					<!-- section 2 -->
-					<div class="seccomp">
-						<p>omo bro gbo gbo wa ma le je breakfast!!!!!</p>
-						
-					</div>
-
-
-					<!-- section3 -->
-					<div class="secthree">
-						<div class="seccourse">
-							<span><b>CSC422</b></span>
-						</div>
-						<div class="sectime">
-							<span class="seccompid">#333334</span>
-							<span class="">opened</span>
-							<span class="seccomptime">11 months ago</span>
-							<span>by</span>
-							<span class="seccomperson">Igwe chidodo</span>
-							
-						</div>
-					</div>
-
-
-
-					
-				</div>
-
-
-
-
-
-				<!-- box gan gan -->
-				<div class="boxgan closedbox">
-
-					<!-- section1 -->
-					<div class="secone ">
-						<div class="shead">
-							<div class="bcircle"></div>
-							<span class="secomhead"><b>Sir, nobody likes the way you lecture</b></span>
-							
-						</div>
-						<div class="problem">
-							<span class="secproblmno">1</span>
-							<span > student has this problem</span>
-						</div>
-					</div>
-
-					<!-- section 2 -->
-					<div class="seccomp">
-						<p>omo bro gbo gbo wa ma le je breakfast!!!!!</p>
-						
-					</div>
-
-
-					<!-- section3 -->
-					<div class="secthree">
-						<div class="seccourse">
-							<span><b>CSC422</b></span>
-						</div>
-						<div class="sectime">
-							<span class="seccompid">#333334</span>
-							<span class="">opened</span>
-							<span class="seccomptime">11 months ago</span>
-							<span>by</span>
-							<span class="seccomperson">Igwe chidodo</span>
-							
-						</div>
-					</div>
-
-
-
-					
-				</div>
-
-
-
-
-
-				<!-- box gan gan -->
-				<div class="boxgan activebox">
+				<div class="boxgan">
 
 					<!-- section1 -->
 					<div class="secone">
@@ -511,8 +388,10 @@
 
 					<!-- section3 -->
 					<div class="secthree">
-						<div class="seccourse">
-							<span><b>CSC422</b></span>
+						<div class="sectag">
+							<span class="stag"><b>compreshion</b></span>
+							<span class="stag"><b>lecturer</b></span>
+							<span class="stag"><b>registration</b></span>
 						</div>
 						<div class="sectime">
 							<span class="seccompid">#333334</span>
@@ -529,6 +408,110 @@
 					
 				</div>
 
+
+
+
+
+				<!-- box gan gan -->
+				<div class="boxgan">
+
+					<!-- section1 -->
+					<div class="secone">
+						<div class="shead">
+							<div class="ocircle"></div>
+							<span class="secomhead"><b>Sir, nobody likes the way you lecture</b></span>
+							
+						</div>
+						<div class="problem">
+							<span class="secproblmno">1</span>
+							<span > student has this problem</span>
+						</div>
+					</div>
+
+					<!-- section 2 -->
+					<div class="seccomp">
+						<p>omo bro gbo gbo wa ma le je breakfast!!!!!</p>
+						
+					</div>
+
+
+					<!-- section3 -->
+					<div class="secthree">
+						<div class="sectag">
+							<span class="stag"><b>compreshion</b></span>
+							<span class="stag"><b>lecturer</b></span>
+							<span class="stag"><b>registration</b></span>
+						</div>
+						<div class="sectime">
+							<span class="seccompid">#333334</span>
+							<span class="">opened</span>
+							<span class="seccomptime">11 months ago</span>
+							<span>by</span>
+							<span class="seccomperson">Igwe chidodo</span>
+							
+						</div>
+					</div>
+
+
+
+					
+				</div>
+
+
+
+
+				<!-- box gan gan -->
+				<div class="boxgan">
+
+					<!-- section1 -->
+					<div class="secone">
+						<div class="shead">
+							<div class="ocircle"></div>
+							<span class="secomhead"><b>Sir, nobody likes the way you lecture</b></span>
+							
+						</div>
+						<div class="problem">
+							<span class="secproblmno">1</span>
+							<span > student has this problem</span>
+						</div>
+					</div>
+
+					<!-- section 2 -->
+					<div class="seccomp">
+						<p>omo bro gbo gbo wa ma le je breakfast!!!!!</p>
+						
+					</div>
+
+
+					<!-- section3 -->
+					<div class="secthree">
+						<div class="sectag">
+							<span class="stag"><b>compreshion</b></span>
+							<span class="stag"><b>lecturer</b></span>
+							<span class="stag"><b>registration</b></span>
+						</div>
+						<div class="sectime">
+							<span class="seccompid">#333334</span>
+							<span class="">opened</span>
+							<span class="seccomptime">11 months ago</span>
+							<span>by</span>
+							<span class="seccomperson">Igwe chidodo</span>
+							
+						</div>
+					</div>
+
+
+
+					
+				</div>
+
+
+
+
+
+
+
+				
 
 
 
@@ -562,8 +545,7 @@
 
 	</div>
 
-	<script type="text/javascript" src="myinbox.js"></script>
-	<script type="text/javascript" src="general/gen.js"></script>
+	<script type="text/javascript" src="gen.js"></script>
 
 </body>
 </html>
