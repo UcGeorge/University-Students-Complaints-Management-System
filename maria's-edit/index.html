@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="design.css">
   </head>
   <body>
+			
+					
 
    <div class="section">
    <div class="top">
@@ -34,7 +36,63 @@
     	</div>
     </div>
 
-      <div class="manquee"></div>
+
+				<div class="slideshow-container"data-component="slideshow">
+
+						<div class="slidercontainer">  
+								<div class="showSlide fade">  
+										<img src="imag/unimgg.jpg" />  
+										<div class="content">Slide1 heading</div>  
+								</div>  
+								<div class="showSlide fade">  
+										<img src="imag/unimg.jpg" />  
+										<div class="content">Slide2 heading</div>  
+								</div>  
+					
+								<div class="showSlide fade">  
+										<img src="images/img3.jpg" />  
+										<div class="content">Slide3 heading</div>  
+								</div>  
+							
+								<!-- Navigation arrows -->  
+								<a class="left" onclick="nextSlide(-1)">❮</a>  
+								<a class="right" onclick="nextSlide(1)">❯</a>  
+						</div>  
+					
+						<script type="text/javascript">  
+								var slide_index = 1;  
+								displaySlides(slide_index);  
+					
+								function nextSlide(n) {  
+										displaySlides(slide_index += n);  
+								}  
+					
+								function currentSlide(n) {  
+										displaySlides(slide_index = n);  
+								}  
+					
+								function displaySlides(n) {  
+										var i;  
+										var slides = document.getElementsByClassName("showSlide");  
+										if (n > slides.length) { slide_index = 1 }  
+										if (n < 1) { slide_index = slides.length }  
+										for (i = 0; i < slides.length; i++) {  
+												slides[i].style.display = "none";  
+										}  
+										slides[slide_index - 1].style.display = "block";  
+								}  
+						</script>  
+					
+					<!-- <div class="mySlides fade">
+						<img src="img/unimg.jpg" style="width:100%">
+					
+					</div> 
+					
+					<div class="mySlides fade">
+						<img src="img/unimgg.jpg" style="width:100%">
+						
+					</div>
+			 </div> 
       <div class="end"> </div>
 
       <footer></footer>
