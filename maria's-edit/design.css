@@ -30,7 +30,7 @@ body{
 }
 .blank{
 	background-color: #8e1300;
-	height: 5px;
+	height: 4px;
 	width: 100%;
 }
 .contact{
@@ -58,6 +58,7 @@ li{
 .side{
 	float: left;
 }
+
 #pic{
 	margin-top:20px;
 	height: 50%;
@@ -107,46 +108,19 @@ a:link, a:visited {
 
  
 
-	/* Slideshow container 
-height: 800px;
-	position:relative;
-	margin: auto;
-  }
-  
-  
-  .fade {
-	-webkit-animation-name: fade;
-	-webkit-animation-duration: 1.5s;
-	animation-name: fade;
-	animation-duration: 1.5s;
-  }
-  
-  @-webkit-keyframes fade {
-	from {opacity: .4} 
-	to {opacity: 1}
-  }
-  
-  @keyframes fade {
-	from {opacity: .4} 
-	to {opacity: 1}
-  }
-  
-  /* On smaller screens, decrease text size 
-  @media only screen and (max-width: 300px) {
-	.text {font-size: 11px}
-  }*/
 
   .maindiv{
 	  width: 100%;
-	  height:360px;
+	  height:420px;
 	  background-image: url(img/compla.jpg);
 	  background-size: 100% 100%;
 	  position: absolute;
-	  animation: slider 9s infinite linear;
+	  animation: slider 15s infinite linear;
   }
 @keyframes slider{
 	0%{
 		background-image: url(img/compla.jpg);
+		
 	}
 	35%{
 		background-image: url(img/writeup.jpg);
@@ -155,14 +129,37 @@ height: 800px;
 		background-image: url(img/student.jpg);
 	}
 }
+.end{
+	position: absolute;
+	bottom: 40px;
+	background-color: #fff;
+	width: 100%;
+	height: 40px;
+}
+.blan{
+	position: absolute;
+	bottom: 40px;
+	
+	width: 100%;
+	background-color: #8e1300;
+	height: 3px;
+	width: 100%;
+}
 
-  [data-component="slideshow"] .slide {
-    display: none;
-  }
-
-  [data-component="slideshow"] .slide.active {
-    display: block;
-  }
+.last{ 
+	position: absolute;
+	bottom: 0px;
+	background-color: black;
+	width: 100%;
+	height: 40px;
+}
+.write{
+	color: white;
+	font-size: 14px;
+	margin-left: 18px;
+	margin-top: 12px;
+}
+  
 
  .center{
  	width: 150px;
