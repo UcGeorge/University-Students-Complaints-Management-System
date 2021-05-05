@@ -41,7 +41,7 @@ if (isset($_POST['staff'])) {
 
             <div class="four">
                 <div class="contain">
-                    <a href="index.html" class="standby">UNILAG-LMS</a>
+                    <a href="index.html" class="standby">UNILAG-CMS</a>
                     <a href="login/login.html" class "click">User Login</a>
 
                 </div>
@@ -52,42 +52,13 @@ if (isset($_POST['staff'])) {
         </div>
 
         <div class="manquee"></div>
-        <div class="end"> </div>
+        <div class="end" style="height: 370px;
+    background-size: cover;
+    background-repeat: repeat-x;
+    background: url('assets/img/compla.jpg');"> </div>
 
         <footer></footer>
     </div>
 </body>
 
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Complaint Management System</title>
-</head>
-
-<body>
-    <script type="text/javascript" src="script/login.js"></script>
-    <div class="container">
-        <div class="header">
-            <h2>Log In</h2>
-        </div>
-
-        <form>
-            <div>
-                <label for="matric"> Matric no: </label>
-                <input type="text" name="matric" onchange="newStudent.onMatricChange(event)" required>
-            </div>
-            <br>
-            <div>
-                <label for="password"> Password: </label>
-                <input type="password" name="password" onchange="newStudent.onPasswordChange(event)" required>
-            </div>
-
-            <button onclick="newStudent.onSubmitLogIn()" type="submit" name="login_user"><b>Log in</b> </button>
-        </form>
-    </div>
-</body>
-
-</html> -->
