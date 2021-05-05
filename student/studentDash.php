@@ -49,7 +49,7 @@ function display_courses()
 			if ($c['status'] == 'open') {
 				$course_active++;
 			}
-			if ($c['author'] == $user_data['mat_no']) {
+			if ($c['author'] == $user_data['name']) {
 				$course_personal++;
 			}
 		}
