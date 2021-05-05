@@ -133,18 +133,7 @@ a:link, a:visited {
 	  font-size: 25px;
 	 
 	  }
-  
-@keyframes slider{
-	0%{
-		background-image: url(img/compla.jpg);
-	}
-	35%{
-		background-image: url(img/writeup.jpg);
-	}
-	75%{
-		background-image: url(img/student.jpg);
-	}
-}
+
 .end{
 	position: absolute;
 	bottom: 40px;
