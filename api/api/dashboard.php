@@ -1,60 +1,16 @@
 <?php
-// Headers
-header('Content-Type: application/json');
-
-// Slap whoever doesn't have authentication. SMH, wasting my time and recourses.
-if (!isset($_SERVER['PHP_AUTH_USER'])) {
-    header('WWW-Authenticate: Basic realm="Private Area"');
-    header('HTTP/1.0 401 Unauthorized');
-    echo json_encode(
-        array('message' => 'Please use your credentials. MTCHEWWWW')
-    );
-    exit;
-}
-
-$username = $_SERVER['PHP_AUTH_USER'];
-$password = $_SERVER['PHP_AUTH_PW'];
-
-include_once "../config/Database.php";
-include_once "../config/Authenticator.php";
+include "init.php";
 include_once "../model/Student.php";
 include_once "../model/Course.php";
 include_once "../model/Complaint.php";
 
 try {
 
-    // Instantiate DB and connect
-    $database = new Database();
-    $db = $database->connect();
-
     // Instantiate models
     $students = new Student($db);
     $lecturers = new Lecturer($db);
     $courses = new Course($db);
     $complaints = new Complaint($db);
-
-    // Instantiate authenticator
-    $authenticator = new Authenticator($db);
-
-    // Authenticate user
-    $user = $authenticator->authenticate($username, $password);
-    if (!isset($user['username'])) {
-        header('WWW-Authenticate: Basic realm="Private Area"');
-        header('HTTP/1.0 401 Unauthorized');
-        echo json_encode(
-            array('message' => $user['message'])
-        );
-        exit;
-    }
-
-    if ($user['type'] == 'admin') {
-        header('WWW-Authenticate: Basic realm="Private Area"');
-        header('HTTP/1.0 401 Unauthorized');
-        echo json_encode(
-            array('message' => 'This is not the admin dashboard!')
-        );
-        exit;
-    }
 
     // Final result
     $dashboard_data = array();
