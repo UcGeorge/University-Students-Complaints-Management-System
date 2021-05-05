@@ -73,7 +73,7 @@ function show_tags()
 	global $course_data;
 
 	foreach ($course_data['tags'] as $tag) {
-		echo '<span class="sstag"><b><i class="fas fa-plus"></i>' . $tag . '</b></span>';
+		echo '<span class="sstag"><b>' . $tag . '</b></span>';
 	}
 }
 
@@ -87,36 +87,40 @@ function show_complaints()
 		foreach ($tags as $tag) {
 			$tags_string .= "<span class='stag'><b>$tag</b></span>";
 		}
+		// if ($complaint['status'] == 'open') {
+		// 	continue;
+		// }
 		echo '
 		<div class="boxgan">
-			<div class="secone">
-				<div class="shead">
-					<div class="ocircle"></div>
-					<span class="secomhead"><b>' . $complaint['title'] . '</b></span>
-				</div>
-				<div class="problem">
-					<span class="secproblmno">1</span>
-					<span>' . $complaint['subscribers']  == '0' ? 'No' : $complaint['subscribers']  . ' student has this problem</span>
-				</div>
-			</div>
-			<div class="seccomp">
-				<p>' . $complaint['description'] . '</p>
+							<div class="secone">
+								<div class="shead">
+									<div class="ocircle"></div>
+									<span class="secomhead"><b>' . $complaint['title'] . '</b></span>
+								</div>
+								<div class="problem">
+									<span class="secproblmno">1</span>
+									<span>' . $complaint['subscribers']  . ' students have this problem</span>
+								</div>
+							</div>
+							<div class="seccomp">
+								<p>' . $complaint['description'] . ' </p>
 
-			</div>
-			<div class="secthree">
-				<div class="sectag">
-				' . $tags_string . '
-				</div>
-				<div class="sectime">
-					<span class="seccompid">' . $complaint['id'] . '</span>
-					<span class="">opened</span>
-					<span class="seccomptime">' . $complaint['dateadded'] . '</span>
-					<span>by</span>
-					<span class="seccomperson">' . $complaint['author'] . '</span>
+							</div>
+							<div class="secthree">
+								<div class="sectag">
+									' . $tags_string . '
+								</div>
+								<div class="sectime">
+									<span class="seccompid">' . $complaint['id'] . '</span>
+									<span class="">opened</span>
+									<span class="seccomptime">' . $complaint['dateadded'] . '</span>
+									<span>by</span>
+									<span class="seccomperson">' . $complaint['author'] . '</span>
 
-				</div>
-			</div>
-		</div>';
+								</div>
+							</div>
+						</div>
+		';
 	}
 }
 
@@ -225,8 +229,8 @@ function show_complaints()
 			</a>
 
 			<!-- My Courses nav -->
-			<a href="" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
-				<span>My Courses </span><i class="triangle-down"></i>
+			<a href="./studentDash.php" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
+				<span>My Courses </span>
 
 			</a>
 
@@ -270,7 +274,7 @@ function show_complaints()
 
 		<!-------- body ------->
 
-		<div class="mbody">
+		<div class="mbody" style="padding-bottom: 300px;">
 
 
 
@@ -283,8 +287,8 @@ function show_complaints()
 			<!-- A little direction nav -->
 
 			<div class="littlenav">
-				<a href="">Home</a><span class="fas fa-chevron-right"> </span>
-				<a href="">My Course</a><span class="fas fa-chevron-right"> </span>
+				<a href="./studentDash.php">Home</a><span class="fas fa-chevron-right"> </span>
+				<a href="./studentDash.php">My Course</a><span class="fas fa-chevron-right"> </span>
 				<a href=""><?php echo $_GET['name'] ?></a>
 
 			</div>
@@ -296,7 +300,7 @@ function show_complaints()
 
 				<!---------- back div ---------->
 				<div class="backdiv">
-					<span class="fas fa-chevron-left"> </span><a href="">back</a>
+					<span class="fas fa-chevron-left"> </span><a href="./studentDash.php">back</a>
 				</div>
 
 
@@ -339,7 +343,6 @@ function show_complaints()
 					<div class="catgrydiv">
 						<h4>Tags</h4><br>
 						<?php show_tags() ?>
-						<span><b>more...</b></span>
 					</div>
 
 					<!-- category -->
@@ -398,16 +401,6 @@ function show_complaints()
 			<!-------------------- right side -------------------->
 
 			<div class="rightside">
-				<!---------- search div ---------->
-				<div class="searchdiv">
-
-					<input class="sinput" type="text" name="" placeholder="search complaints">
-
-				</div>
-
-
-
-
 
 
 				<!----------- complaint div ----------->
@@ -425,10 +418,11 @@ function show_complaints()
 						</div>
 
 
-						<?php show_complaints() ?>
-
+						<?php show_complaints()
+						?>
 
 					</div>
+
 
 				</div>
 

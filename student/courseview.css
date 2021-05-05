@@ -1,217 +1,190 @@
 /******  My Inbox ******/
 
+
 /******** mbody *******/
 
-.mbody{
-	position: relative;
-
-	padding: 10px 0px 270px;
-	/*border: 1px solid yellow;*/
-	background-color: white;
+.mbody {
+    position: relative;
+    padding: 10px 0px 280px;
+    /*border: 1px solid yellow;*/
+    background-color: white;
 }
 
-.littlenav{
-	margin-left: 15px;
-	margin-bottom: 10px;
-}
-.littlenav a{
-	text-decoration: none;
-	color: #555;
-	font-size: 13px;
-
+.littlenav {
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
-.fa-chevron-right{
-	margin: 0px 3px 0px 7px;
-	color:#bfbfbf;
-	font-size: 11px;
+.littlenav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
 }
 
+.fa-chevron-right {
+    margin: 0px 3px 0px 7px;
+    color: #bfbfbf;
+    font-size: 11px;
+}
 
 
 /*********  left side **********/
-.leftside{
-	
-	
-	
-	width: 17%;
-	/*border: 1px solid green;*/
+
+.leftside {
+    width: 17%;
+    /*border: 1px solid green;*/
 }
+
 
 /**** Back div ****/
 
-.backdiv a{
-
-	margin-left: 2px;
-	text-decoration: none;
-	color: #a81600; 
-	font-size: 11px;
+.backdiv a {
+    margin-left: 2px;
+    text-decoration: none;
+    color: #a81600;
+    font-size: 11px;
 }
-
 
 .backdiv {
-	
-	color: #a81600; 
-	margin-left: 8px;
-	font-size: 11px;
+    color: #a81600;
+    margin-left: 8px;
+    font-size: 11px;
 }
+
 
 /**** My inbox div ****/
 
-.myinboxdiv{
-	padding: 0px 0px 40px 30px;
+.myinboxdiv {
+    padding: 0px 0px 40px 30px;
 }
 
-.myinboxdiv p{
-	color: #444;
-	font-size: 18px;
+.myinboxdiv p {
+    color: #444;
+    font-size: 18px;
 }
 
-
-.myinboxdiv span{
-	font-size: 12px;
+.myinboxdiv span {
+    font-size: 12px;
 }
 
-
-.coursewords{
-	color: #555;
-	margin-bottom: 10px;
-}
-.ocircle{
-	display: inline-block;
-	
-height: 12px;
- width: 12px;
- 
-  background-color: orange;
-  border-radius: 50%;
-	
+.coursewords {
+    color: #555;
+    margin-bottom: 10px;
 }
 
-.bcircle{
-	display: inline-block;
-	
- height: 12px;
- width: 12px;
- 
-  background-color: blue;
-  border-radius: 50%;
-	
+.ocircle {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-color: orange;
+    border-radius: 50%;
 }
 
-.onumber{
-	color: orange;
-	margin-right: 13px;
+.bcircle {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-color: blue;
+    border-radius: 50%;
 }
 
-.bnumber{
-	color: blue;
-	margin-right: 13px;
+.onumber {
+    color: orange;
+    margin-right: 13px;
 }
 
-
-
+.bnumber {
+    color: blue;
+    margin-right: 13px;
+}
 
 
 /**** side div ****/
-.sidediv{
-	/*border: 1px solid red;*/
-	padding: 0 8px;
-	font-size: 11px;
 
-	
-	
-
+.sidediv {
+    /*border: 1px solid red;*/
+    padding: 0 8px;
+    font-size: 11px;
 }
 
-.catgrydiv{
-	/*border: 1px solid blue;*/
-	margin: 18px 5px ;
-	color: #a81600; 
-
+.catgrydiv {
+    /*border: 1px solid blue;*/
+    margin: 18px 5px;
+    color: #a81600;
 }
 
-.catgrydiv h4{
-	margin: 5px 0px;
-	
-
+.catgrydiv h4 {
+    margin: 5px 0px;
 }
 
-
-.catgrydiv p{
-	margin: 5px 0px;
-	display: inline-block;
-	cursor: pointer;
+.catgrydiv p {
+    margin: 5px 0px;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.catgrydiv span b{
-	font-size: 10px;
-	cursor: pointer;
+.catgrydiv span b {
+    font-size: 10px;
+    cursor: pointer;
 }
 
-
-.sstag{
-	display: inline-block;
-	color: #a81600; 
-	font-size: 10px;
-	padding: 4px 5px;
-	border-radius: 10px;
-	margin: 2px 5px 2px 0px;
-	background-color: pink;
-	cursor: pointer;
+.sstag {
+    display: inline-block;
+    color: #a81600;
+    font-size: 10px;
+    padding: 4px 5px;
+    border-radius: 10px;
+    margin: 2px 5px 2px 0px;
+    background-color: pink;
+    cursor: pointer;
 }
 
-
-.sctag{
-	display: inline-block;
-	background-color: #a81600; 
-	color: white;
-	font-size: 10px;
-	padding: 4px 5px;
-	border-radius: 10px;
-	margin: 2px 5px 2px 0px;
-	cursor: pointer;
-	
+.sctag {
+    display: inline-block;
+    background-color: #a81600;
+    color: white;
+    font-size: 10px;
+    padding: 4px 5px;
+    border-radius: 10px;
+    margin: 2px 5px 2px 0px;
+    cursor: pointer;
 }
 
-.fa-plus{
-	font-size: 10px;
-	color: #a81600;
-	margin-right: 3px; 
+.fa-plus {
+    font-size: 10px;
+    color: #a81600;
+    margin-right: 3px;
 }
 
-.fa-check{
-	font-size: 10px;
-	color: white;
-	margin-right: 3px; 
+.fa-check {
+    font-size: 10px;
+    color: white;
+    margin-right: 3px;
 }
 
-
-.blankcircles{
-	cursor: pointer;
-	display: inline-block;
-
- 	border: 1px solid #a81600; 
- height: 12px;
- width: 12px;
-  border-radius: 50%;
-	margin-right: 5px;
+.blankcircles {
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid #a81600;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
-
-.currentbcirc{
-	cursor: pointer;
-	display: inline-block;
-	/*height: 5px;
+.currentbcirc {
+    cursor: pointer;
+    display: inline-block;
+    /*height: 5px;
  width: 5px;*/
- padding: 3px;
- 	background-color: white;
- 	padding: auto;
-  border: 3px solid #a81600; 
-  border-radius: 50%;
-	margin-right: 5px;
-
+    padding: 3px;
+    background-color: white;
+    padding: auto;
+    border: 3px solid #a81600;
+    border-radius: 50%;
+    margin-right: 5px;
 }
+
 
 /*.blankcircle{
 	height: 7px;
@@ -226,144 +199,93 @@ height: 12px;
 }*/
 
 
-
 /*********  right side **********/
-.rightside{
-	
-	
-	
-	margin-top: -517px;
-	margin-left: 17%;
-	width: 83%;
-	/*border: 1px solid blue;*/
-	
-}
 
+.rightside {
+    margin-top: -517px;
+    margin-left: 17%;
+    width: 83%;
+    /*border: 1px solid blue;*/
+}
 
 
 /**** search div ****/
-.searchdiv{
-	
-margin-top: -10px;
-margin-left: 594px; 
-/*border: 1px solid grey;*/
-margin-bottom: 20px;
 
-	
-
+.searchdiv {
+    margin-top: -10px;
+    margin-left: 594px;
+    /*border: 1px solid grey;*/
+    margin-bottom: 20px;
 }
 
-
-.sinput{
-	border: none;
-	border: 1px solid grey;
-	border-radius: 9px;
-	background-color: #f2f2f2;
-	padding: 5px 10px 5px 40px;
-	background-image: url("images/searchicon.png");
-	background-position: 5px 5px;
-	background-repeat: no-repeat;
-	outline: none;
-	
-	font-size: 15px;
-	
+.sinput {
+    border: none;
+    border: 1px solid grey;
+    border-radius: 9px;
+    background-color: #f2f2f2;
+    padding: 5px 10px 5px 40px;
+    background-image: url("images/searchicon.png");
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    outline: none;
+    font-size: 15px;
 }
 
-
-
-/**** complaint div ****/
-
-.complntdiv{
-	
-	/*border: 1px solid grey;*/
-
-	
-
+.complaintbox {
+    border: 1px solid grey;
+    width: 80%;
+    margin: 0px 30px;
 }
 
-
-.complaintbox{
-	border: 1px solid grey;
-	width: 80%;
-	margin: 0px 30px;
-	
-
+.boxhead {
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-size: 12px;
 }
 
-.boxhead{
-	background-color: #f2f2f2;
-	padding: 10px;
-	font-size: 12px;
+.fa-exclamation-circle {
+    margin-right: 5px;
 }
 
-.fa-exclamation-circle{
-	margin-right: 5px;
-
+.boxgan {
+    padding: 30px;
+    border-top: 1px solid grey;
 }
 
-.boxgan{
-	padding: 30px;
-	border-top: 1px solid grey;
-
-
+.secomhead {
+    color: #444;
+    padding-left: 10px;
 }
 
-.secone{
-	/*border: 1px solid yellow;*/
+.problem {
+    /*border: 1px solid red;*/
+    float: right;
+    color: #a81600;
+    font-size: 11px;
+    margin-top: -20px;
 }
 
-.shead{
-	/*border: 1px solid blue;*/
+.seccomp {
+    color: #555;
 }
 
-.secomhead{
-	color: #444;
-	padding-left: 10px; 
+.sectag {
+    /*border: 1px solid blue;*/
+    color: #a81600;
+    font-size: 10px;
 }
 
-.problem{
-	/*border: 1px solid red;*/
-	float: right;
-	color: #a81600; 
-	font-size: 11px;
-	margin-top: -20px;
-
+.stag {
+    padding: 3px 5px;
+    border-radius: 10px;
+    margin: 0 10px 0 0;
+    background-color: pink
 }
 
-
-.seccomp{
-	
-	color: #555;
+.sectime {
+    /*border: 1px solid red;*/
+    font-size: 11px;
+    color: #a81600;
+    float: right;
+    margin-top: -20px;
 }
-
-
-.secthree{
-	/*border: 1px solid yellow;*/
-}
-
-.sectag{
-	/*border: 1px solid blue;*/
-	color: #a81600; 
-	font-size: 10px;
-}
-
-
-.stag{
-
-	padding: 3px 5px;
-	border-radius: 10px;
-	margin: 0 10px 0 0;
-	background-color: pink
-
-}
-
-.sectime{
-	/*border: 1px solid red;*/
-	font-size: 11px;
-	color: #a81600; 
-	float: right;
-	margin-top: -20px;
-}
-
-
-
