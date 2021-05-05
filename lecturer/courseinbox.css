@@ -301,6 +301,10 @@ margin-bottom: 20px;
 
 }
 
+.aboxgan{
+	text-decoration: none;
+}
+
 .boxgan{
 	padding: 30px;
 	border-top: 1px solid grey;

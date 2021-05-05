@@ -3,10 +3,10 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>UNILAG-CMS | Open</title>
+	<title>UNILAG-CMS | Complaints</title>
 
 	<link rel="stylesheet" type="text/css" href="general/gen.css">
-	<link rel="stylesheet" type="text/css" href="open1.css">
+	<link rel="stylesheet" type="text/css" href="coursecomplaint.css">
 	
 	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
 
@@ -49,22 +49,22 @@
 
 			<div class="username">
 				<img src="images/notifications.svg">
-				<p><b>EBUNOLUWA PHILIP FASHINA</b></p>
+				<p><b>IGWE CHIDERA HILARY</b></p>
 				<i onclick="showhide();" class="triangle-downs"></i>
 
 				<!-- user dropdown -->
 				
 					<div class="userdrop">
-					<a href="dashboard.html">
+					<a href="studentdash.html">
 						<i class="fas fa-tachometer-alt"></i>
 						Dashboard
 						
 					</a>
 					<hr>
 
-					<a href="myinbox.html">
+					<a href="complaintsview.html">
 						<i class="fas fa-inbox"></i>
-						My Inbox
+						My Complaints
 						
 					</a>
 
@@ -108,8 +108,8 @@
 		</a>
 
 		<!-- My inbox nav -->
-		<a href="myinbox.html" class="inboxnav">
-			<span>My Inbox</span>
+		<a href="complaintsview.html" class="inboxnav">
+			<span>My Complaints</span>
 			
 		</a>
 
@@ -127,7 +127,7 @@
 			
 
 
-			<a href="courseinbox.html">CSC434</a>
+			<a href="coursecomplaint.html">CSC434</a>
 			<a href="">CSC434</a>
 			<a href="">CSC434</a>
 			<a href="">CSC434</a>
@@ -167,8 +167,9 @@
 
 		<div class="littlenav">
 			<a href="">Home</a><span class="fas fa-chevron-right"> </span>
-			<a href="">My Course</a><span class="fas fa-chevron-right"> </span>
-			<a href="">CSC 422</a>
+			<a href="">My Courses</a><span class="fas fa-chevron-right"> </span>
+			<a href="courseview.html">CSC 422</a><span class="fas fa-chevron-right"> </span>
+			<a href="coursecomplaint.html">New Complaint</a>
 			
 		</div>
 
@@ -181,134 +182,82 @@
 
 
 
+		<!--------- SEC 1  ---------->
+
+		<div class="secomp1">
+			<p><b>Data Communiactions</b> - New Complaints</p>
+		</div>
 
 
-		<!------------ TOP  ------------>
-		<div class="top">
+		<form>
+			<!--------- SEC 2  ---------->
 
-			<!-- sec1 -->
-			<div class="tsecone">
-				<h3>Sir, We do not like the way you teach</h3>
-				<span> - #77183</span>
+		<div class="secomp2">
+			<div>
+				<label><b>Title*</b> </label><br>
+				<input class="title" type="text" name="">
+			</div>
+
+			<div>
+				<label><b>Category*</b> </label><br>
+				<input class="categry" type="text" name="" value="CSC434" disabled="">
+			</div>
+			
+			
+		</div>
+
+
+
+		<!--------- SEC 3  ---------->
+
+		<div class="secomp3">
+
+			<!----- sec 3.1 ----->
+			<div class="secomp31">
+				<div>
+				<label><b>Description*</b></label><br>
+				<textarea>
+					
+				</textarea>
+
+
+				<button><b> Open <span>#12345</span></b></button>
+				</div>
+
+				
 				
 			</div>
 
-			<!-- sec2 -->
-			<div class="tsectwo">
-				<span class="topen"><b>Open</b></span>
-				<span><b>Igwe Chidera</b></span>
-				<span>opened this complaint</span>
-				<span>11 minutes ago</span><i class="fas fa-circle"></i>
-				<span>1</span>
-				<span>comment(s)</span>
-				
+			<!----- sec 3.2 ----->
+			<div class="secomp32">
+				<!-- Tags -->
+			<div class="catgrydiv">
+				<h4>Tags</h4><br>
+				<span class="sstag"><b><i class="fas fa-plus"></i>registration</b></span>
+				<span class="sctag"><b><i class="fas fa-check"></i>comprehension</b></span>
+				<span class="sctag"><b><i class="fas fa-check"></i>lecturer</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>continous assesment</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>exam</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>project</b></span>
+				<span><b>more...</b></span>
 			</div>
 
-			<!-- sec3 -->
-			<div class="tsecthree">
 
-				<p>
-					Guy may i no lie i no like the way you dey teach 
-					Eh actually dey very annoying.See the nonsense exams 
-					you give us that day now.
-
-				</p>
+				<!-- Add a tag -->
+				<div class="sc32tag">
+					<h3>Add tag</h3>
+					<input type="text" name="">
+					
+				</div>
 				
 			</div>
 			
 		</div>
 
 
+		</form>
 
-
-
-		<!------------ BOTTOM  ------------>
-		<div class="bottom">
-
-			<hr>
-
-
-
-			<!-------- sec1 ------->
-			<div class="bsecone">
-
-				<!---- comment written ---->
-				<div class="comwrtn">
-					<i class="triangle-left"></i>
-
-					<!-- pic -->
-					<div class="compic">
-						<img src="images/usericon.png">
-						
-					</div>
-
-					<!-- comment box -->
-					<div class="combox">
-
-						<!--  comment head -->
-						<div class="combhead">
-
-							<span><b>Igwe Chidera</b></span>
-							<span>commented</span>
-							<span>11 minutes ago</span>
-							
-						</div>
-
-						<!--  comment body -->
-						<div class="combbody">
-										<p>
-								Guy may i no lie i no like the way you dey teach 
-								Eh actually dey very annoying.See the nonsense exams 
-								you give us that day now.
-
-							</p>
-						</div>
-						
-					</div>
-					
-				</div>
-
-
-				<!---- comment to write ----->
-				<div class="com2wrt">
-					
-
-					<form>
-						<textarea>
-							
-						</textarea>
-
-						<!-- comment button -->
-						<div class="combtn">
-
-							<input class="comntbtn" type="submit" name="comment" value="comment">
-
-						</div>
-					</form>
-
-					
-
-				</div>
-				
-			</div>
-
-
-
-
-
-			<!-------- sec2 -------->
-			<div class="bsectags">
-				
-				<h4>Tags</h4>
-				<span class="bstags"><b>comprehension</b></span><br>
-				<span class="bstags"><b>registration</b></span>
-				<span class="bstags"><b>lecturer</b></span>
-
-			</div>
-
-			
-			
-		</div>
+		
 
 
 		

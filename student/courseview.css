@@ -5,7 +5,7 @@
 .mbody{
 	position: relative;
 
-	padding: 10px 0px 270px;
+	padding: 10px 0px 280px;
 	/*border: 1px solid yellow;*/
 	background-color: white;
 }
@@ -77,6 +77,18 @@
 	color: #555;
 	margin-bottom: 10px;
 }
+
+.rcircle{
+	display: inline-block;
+	
+height: 12px;
+ width: 12px;
+ 
+  background-color: maroon;
+  border-radius: 50%;
+	
+}
+
 .ocircle{
 	display: inline-block;
 	
@@ -99,6 +111,10 @@ height: 12px;
 	
 }
 
+.rnumber{
+	color: maroon;
+	margin-right: 13px;
+}
 .onumber{
 	color: orange;
 	margin-right: 13px;
@@ -245,7 +261,7 @@ height: 12px;
 .searchdiv{
 	
 margin-top: -10px;
-margin-left: 594px; 
+margin-left: 425px; 
 /*border: 1px solid grey;*/
 margin-bottom: 20px;
 
@@ -270,6 +286,25 @@ margin-bottom: 20px;
 }
 
 
+.newcompbtn{
+	display: inline-block;
+	margin-left: 10px;
+	
+
+}
+
+.newcompbtn button{
+	padding: 6px 15px;
+	background-color: #8E1300;
+	color: white;
+	border-radius: 10px;
+	font-size: 13px;
+	border: none;
+	cursor: pointer;
+}
+
+
+
 
 /**** complaint div ****/
 
@@ -285,7 +320,7 @@ margin-bottom: 20px;
 .complaintbox{
 	border: 1px solid grey;
 	width: 80%;
-	margin: 0px 30px;
+	margin: 0px 0px;
 	
 
 }
@@ -299,6 +334,10 @@ margin-bottom: 20px;
 .fa-exclamation-circle{
 	margin-right: 5px;
 
+}
+
+.aboxgan{
+	text-decoration: none;
 }
 
 .boxgan{
@@ -363,6 +402,50 @@ margin-bottom: 20px;
 	color: #a81600; 
 	float: right;
 	margin-top: -20px;
+}
+
+
+
+
+
+/********  Side lecturers  ********/
+
+.sidelec{
+	margin-top: -318px;
+	float: right;
+	clear: right;
+	margin-right: 5px;
+
+	/*border: 1px solid yellow;*/
+	padding: 0px 5px;
+}
+
+
+.sideleclec{
+	font-size: 13px;
+	color: #8E1300;
+	margin: 10px 0px;
+}
+
+
+.sidelename{
+
+}
+
+
+.sidelecsname{
+	font-size: 13px;
+	display: inline-block;
+	color: white;
+	background-color: #8E1300;
+	padding: 3px 8px;
+	border-radius: 50%;
+	margin: 5px 0px;
+}
+
+.sidelecfname{
+	font-size: 11px;
+	display: inline-block;
 }
 
 

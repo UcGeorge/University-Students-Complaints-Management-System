@@ -133,8 +133,8 @@ hr{
 	width: 77%;
 	padding: 30px;
 
-	/*border: 1px solid red;
-	*/
+	/*border: 1px solid red;*/
+	
 }
 
 
@@ -284,8 +284,21 @@ textarea{
 /************ OPEN 2  ****************/
 /*i.e. when styles for when more than one person dey chat*/
 
+/******  when there are no comments *****/
+
+.nocomms{
+	
+	/*border: 1px solid blue;*/
+	margin: 30px 30px 60px;
+	text-align: center;
+	color: #555;
+}
+
+
+
 /******  comment written two *******/
 .comwrtn2{
+	
 	position: relative;
 	/*border: 1px solid pink;*/
 	/*margin-bottom: 10px;*/
@@ -298,7 +311,7 @@ textarea{
 	width: 0;
 	height: 0;
 
-	border-left: 20px solid #8E1300;
+	border-left: 20px solid pink;
 	border-right: 20px solid transparent;
 	border-bottom: 20px solid transparent;
 	transform: rotate(135deg);
@@ -338,11 +351,11 @@ textarea{
 	border-top-left-radius: 5px;
 	padding:10px 5px 10px 570px;
 	font-size: 12px;
-	color: white;
+	color: #555;
 	
 	border-top: 1px solid grey;
 	border-left: 1px solid grey;
-	background-color: #8E1300;
+	background-color: pink;
 	
 	height: 40px;
 }
@@ -380,8 +393,6 @@ textarea{
 	cursor: pointer;
 	font-size: 13px;
 }
-
-
 
 
 /********  Side lecturers  ********/
