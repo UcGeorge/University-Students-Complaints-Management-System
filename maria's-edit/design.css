@@ -48,8 +48,6 @@ li{
 
 .logins{
 
-
-
 	height: 150px;
 	width: 90%;
 	background-color: white;
@@ -65,8 +63,9 @@ li{
 	object-fit: contain;}
 
 .p{
-	margin-left: 820px;
+	margin-left: 800px;
 	padding-top: 40px;
+	border: 0;
 }
 
 .four{
@@ -115,12 +114,29 @@ a:link, a:visited {
 	  background-image: url(img/compla.jpg);
 	  background-size: 100% 100%;
 	  position: absolute;
-	  animation: slider 15s infinite linear;
-  }
+	  animation: slider 9s infinite linear;
+	  display: flex;
+	  justify-content: left ;
+	  align-items: center; 
+	  }
+	  .cmss{
+		background-color: #8e1300;
+		opacity: 0.7;
+		height: 60px;
+		width: 530px;
+		padding-top: 30px;
+		padding-left: 15px;
+		margin-left: 15px;
+	  }
+	  .cms{
+	  color: white;
+	  font-size: 25px;
+	 
+	  }
+  
 @keyframes slider{
 	0%{
 		background-image: url(img/compla.jpg);
-		
 	}
 	35%{
 		background-image: url(img/writeup.jpg);
@@ -157,6 +173,7 @@ a:link, a:visited {
 	color: white;
 	font-size: 14px;
 	margin-left: 18px;
+	margin-left: 12px;
 	margin-top: 12px;
 }
   
