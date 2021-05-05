@@ -23,71 +23,44 @@ if (isset($_POST['staff'])) {
 ?>
 
 <body>
-
     <div class="section">
         <div class="top">
             <div class="blank"></div>
-            <div class="contact"></div>
-            <div class="logins">
-                <img id="pic" src="assets/img/logo.png" align="left">
-                <div class="p">
-                    <h4>LOG IN USING ACCOUNTS BELOW:</h4><br>
-                    <form method="post">
-                        <input class="b" type="submit" name="student" value="STUDENT LOGIN" />
-                        <input class="b" type="submit" name="staff" value="STAFF LOGIN" />
-                    </form>
-                </div>
-            </div>
 
-            <div class="four">
-                <div class="contain">
-                    <a href="index.html" class="standby">UNILAG-LMS</a>
-                    <a href="login/login.html" class "click">User Login</a>
+            <div class="contact">
+                <div>
+                    <div class="logins">
+                        <img id="pic" src="assets/img/logo.png" align="left">
+                        <div class="p">
+                            <h4>LOG IN USING ACCOUNTS BELOW:</h4><br>
+                            <form method="post">
+                                <input class="b" type="submit" name="student" value="STUDENT LOGIN" />
+                                <input class="b" type="submit" name="staff" value="STAFF LOGIN" />
+                            </form>
+                        </div>
 
-                </div>
-            </div>
-            <div class="last">
+                    </div>
 
-            </div>
-        </div>
-
-        <div class="manquee"></div>
-        <div class="end"> </div>
-
-        <footer></footer>
-    </div>
+                    <div class="four">
+                        <div class="contain">
+                            <a href="index.html" class="standby">UNILAG-CMS</a>
+                            <a href="login/login.html" class "click">User Login</a>
+                        </div>
+                    </div>
+                    <div class=""></div>
+                    <div class="maindiv">
+                        <div class="cmss">
+                            <p class="cms"> COMPLAINT MANAGEMENT SYSTEM </dip>
+                        </div>
+                    </div>
+                    <div class="end"> </div>
+                    <div class="blan"></div>
+                    <footer>
+                        <div class="last">
+                            <P class="write">
+                                &copy; 2021. All Rights Reserved | Design by G-SEVEN</P>
+                        </div>
+                    </footer>
 </body>
 
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Complaint Management System</title>
-</head>
-
-<body>
-    <script type="text/javascript" src="script/login.js"></script>
-    <div class="container">
-        <div class="header">
-            <h2>Log In</h2>
-        </div>
-
-        <form>
-            <div>
-                <label for="matric"> Matric no: </label>
-                <input type="text" name="matric" onchange="newStudent.onMatricChange(event)" required>
-            </div>
-            <br>
-            <div>
-                <label for="password"> Password: </label>
-                <input type="password" name="password" onchange="newStudent.onPasswordChange(event)" required>
-            </div>
-
-            <button onclick="newStudent.onSubmitLogIn()" type="submit" name="login_user"><b>Log in</b> </button>
-        </form>
-    </div>
-</body>
-
-</html> -->

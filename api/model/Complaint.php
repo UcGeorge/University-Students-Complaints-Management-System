@@ -154,6 +154,30 @@ class Complaint
                 $num = 0;
             }
 
+            // Create query
+            $sql = "SELECT
+                    `tag`.`name` as `name`
+                FROM
+                    `tag-complaint`
+                INNER JOIN `tag` ON `tag-complaint`.`tag` = `tag`.`id`
+                WHERE
+                    `complaint` = '{$row["id"]}'";
+
+            // echo $sql;
+
+            // Execute
+            if ($result3 = $this->conn->query($sql)) {
+                $tag_arr = array();
+
+                // Output data of each row to the result array
+                while ($row2 = $result3->fetch_assoc()) {
+                    $tag = $row2["name"];
+                    array_push($tag_arr, $tag);
+                }
+            } else {
+                $tag_arr = [];
+            }
+
 
             $complaint = array(
                 'id' => $row["id"],
@@ -163,7 +187,8 @@ class Complaint
                 'title' => $row["title"],
                 'description' => $row["description"],
                 'dateadded' => $row["dateadded"],
-                'subscribers' => $num
+                'subscribers' => $num,
+                'tags' => $tag_arr
             );
 
             array_push($complaints_arr, $complaint);
