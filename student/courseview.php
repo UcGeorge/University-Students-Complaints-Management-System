@@ -113,6 +113,7 @@ function show_complaints()
 		}
 
 		echo '
+		<a href="complaintview.php?id=' . $complaint['id'] . '" style="text-decoration: none;">
 		<div class="boxgan">
 			<div class="secone">
 				<div class="shead">
@@ -142,6 +143,7 @@ function show_complaints()
 				</div>
 			</div>
 		</div>
+		</a>
 		';
 	}
 }
