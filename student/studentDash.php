@@ -4,12 +4,13 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Student</title>
+	<title>UNILAG-CMS | Dashboard</title>
 
-	<link rel="stylesheet" type="text/css" href="studentDash.css">
-	<link rel="stylesheet" type="text/css" href="dashboard.css">
+	<link rel="stylesheet" type="text/css" href="general/gen.css">
+	<link rel="stylesheet" type="text/css" href="studentdassh.css">
 
 	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
+
 </head>
 
 <?php
@@ -54,16 +55,37 @@ function display_courses()
 		}
 
 		// Show the course using the template
-		echo '
-			<div class="course-card">
-				<img src="' . $course_img . '" class="img-responsive"alt="logo"><br>
-				<div class="course-card-details">
-					<h2>' . $course_name . '</h2>
-					<p class="active_compaints"> active ' . $course_active . '</p>
-					<p class="personal_compaints"> personal ' . $course_personal . '</p>
-				</div>
+		echo "<a href='courseview.html' class='coursediv'>
+			<!-- picture -->
+			<div class='coursepic'>
+
 			</div>
-		';
+			<!-- details -->
+			<div class='coursedets'>
+				<p><b>$course_name</b></p>
+
+				<div class='coursewords'>
+					<!-- circle -->
+					<span class='ocircle'></span>
+					<!-- numbers -->
+					<span class='onumber'>$course_active</span>
+					<!-- word -->
+					<span>Active complaints</span>
+
+				</div>
+
+				<div class='coursewords'>
+					<!-- circle -->
+					<span class='bcircle'></span>
+					<!-- numbers -->
+					<span class='bnumber'>$course_personal</span>
+					<!-- word -->
+					<span>Personal complaints</span>
+
+				</div>
+
+			</div>
+		</a>";
 	}
 }
 
@@ -76,7 +98,7 @@ function course_menu()
 	foreach ($course_data as $course) {
 		// Assign useful variables needed for display
 		$course_name = $course['course_title'];
-		echo "<a href=''>$course_name</a>";
+		echo "<a href='courseview.html'>$course_name</a>";
 	}
 }
 ?>
@@ -110,7 +132,7 @@ function course_menu()
 		<div class="profile">
 
 			<!-- unilag logo and home button -->
-			<a href="dashboard.html" class="logo">
+			<a href="" class="logo">
 				<img src="images/unilaglogo.png">
 			</a>
 
@@ -119,12 +141,11 @@ function course_menu()
 
 				<div class="username">
 					<img src="images/notifications.svg">
-					<p><b>
-							<?php echo $user_data['name']; ?>
-						</b></p>
+					<p><b><?php echo $user_data['name']; ?></b></p>
 					<i onclick="showhide();" class="triangle-downs"></i>
 
 					<!-- user dropdown -->
+
 					<div class="userdrop">
 						<a href="">
 							<i class="fas fa-tachometer-alt"></i>
@@ -151,7 +172,10 @@ function course_menu()
 
 						</a>
 					</div>
-					<!--  -->
+
+
+
+
 				</div>
 
 				<div class="usericon">
@@ -192,15 +216,12 @@ function course_menu()
 			<div class="dropdown" onmouseover="mOver()" onmouseout="mOut()">
 
 				<i class="triangle-up"></i>
+
+
+
 				<?php
 				course_menu();
 				?>
-
-				<!-- 
-			<a href="">CSC434</a>
-			<a href="">CSC434</a>
-			<a href="">CSC434</a>
-			<a href="">CSC434</a> -->
 			</div>
 
 
@@ -211,9 +232,15 @@ function course_menu()
 				<form>
 					<div class="hoverinput" onmouseover="hOver()" onmouseout="hOut()">
 						<input class="shinput" type="text" name="" placeholder="search complaints">
+
+
 					</div>
+
+
 					<input class="searchsub" type="submit" name="" value="" onmouseover="hOver()" onmouseout="hOut()">
+
 				</form>
+
 
 			</div>
 
@@ -225,10 +252,38 @@ function course_menu()
 		<!-------- body ------->
 
 		<div class="mbody">
-			<!-- Display courses -->
-			<?php
-			display_courses();
-			?>
+
+
+			<!-- My courses Page -->
+			<!-- Remove this later its not supposed to be here -->
+
+			<!-- A little direction nav -->
+
+			<div class="littlenav">
+				<a href="">Home</a><span class="fas fa-chevron-right"> </span>
+				<a href="">My Course</a>
+
+			</div>
+
+
+			<!-- All the available courses -->
+			<div class="availcourse">
+
+
+
+
+				<?php
+				display_courses();
+				?>
+
+			</div>
+
+
+
+
+
+
+
 		</div>
 
 
@@ -241,7 +296,7 @@ function course_menu()
 
 	</div>
 
-	<script type="text/javascript" src="gen.js"></script>
+	<script type="text/javascript" src="general/gen.js"></script>
 
 </body>
 
