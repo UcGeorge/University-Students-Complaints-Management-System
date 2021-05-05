@@ -67,9 +67,16 @@ class Complaint
     {
         // Create query
         $sql = "SELECT
-                    *
+                    $this->table.`id`,
+                    `student`.`name` as `author`,
+                    $this->table.`category`,
+                    $this->table.`status`,
+                    $this->table.`title`,
+                    $this->table.`description`,
+                    $this->table.`dateadded`
                 FROM
                     $this->table
+                INNER JOIN `student` ON $this->table.`author` = `student`.`mat_no`
                 WHERE
                     `category` IN(
                         SELECT
@@ -109,11 +116,19 @@ class Complaint
     {
         // Create query
         $sql = "SELECT
-                    *
+                    $this->table.`id`,
+                    `student`.`name` as `author`,
+                    $this->table.`category`,
+                    $this->table.`status`,
+                    $this->table.`title`,
+                    $this->table.`description`,
+                    $this->table.`dateadded`
                 FROM
                     $this->table
+                INNER JOIN `student` ON $this->table.`author` = `student`.`mat_no`
                 WHERE
                     `category` = '$course_code'";
+        // echo $sql;
 
         // Execute
         $result = $this->conn->query($sql);
@@ -123,6 +138,23 @@ class Complaint
 
         // Output data of each row to complaint array
         while ($row = $result->fetch_assoc()) {
+
+            // Create query
+            $sql = "SELECT
+                    *
+                FROM
+                    `student-complaint`
+                WHERE
+                    `complaint` = {$row["id"]}";
+
+            // Execute
+            if ($result2 = $this->conn->query($sql)) {
+                $num = mysqli_num_rows($result2);
+            } else {
+                $num = 0;
+            }
+
+
             $complaint = array(
                 'id' => $row["id"],
                 'author' => $row["author"],
@@ -130,12 +162,84 @@ class Complaint
                 'status' => $row["status"],
                 'title' => $row["title"],
                 'description' => $row["description"],
-                'dateadded' => $row["dateadded"]
+                'dateadded' => $row["dateadded"],
+                'subscribers' => $num
             );
 
             array_push($complaints_arr, $complaint);
         }
 
         return $complaints_arr;
+    }
+
+    // Get number of closed complaints by course/category
+    public function get_num_closed($course_code)
+    {
+        // Create query
+        $sql = "SELECT
+                    *
+                FROM
+                    $this->table
+                WHERE
+                    `category` = '$course_code'
+                    AND
+                    `status` = 'close'";
+
+        // Execute
+        if ($result = $this->conn->query($sql)) {
+            $num = mysqli_num_rows($result);
+        } else {
+            $num = 0;
+        }
+
+        return $num;
+    }
+
+    // Get number of open complaints by course/category
+    public function get_num_open($course_code)
+    {
+        // Create query
+        $sql = "SELECT
+                    *
+                FROM
+                    $this->table
+                WHERE
+                    `category` = '$course_code'
+                    AND
+                    `status` = 'open'";
+
+        // Execute
+        if ($result = $this->conn->query($sql)) {
+            $num = mysqli_num_rows($result);
+        } else {
+            $num = 0;
+        }
+
+        return $num;
+    }
+
+    // Get number of open complaints by course/category
+    public function get_num_personal($course_code, $user)
+    {
+        // Create query
+        $sql = "SELECT
+                    *
+                FROM
+                    $this->table
+                WHERE
+                    `category` = '$course_code'
+                    AND
+                    `status` = 'open'
+                    AND
+                    `author` = $user";
+
+        // Execute
+        if ($result = $this->conn->query($sql)) {
+            $num = mysqli_num_rows($result);
+        } else {
+            $num = 0;
+        }
+
+        return $num;
     }
 }

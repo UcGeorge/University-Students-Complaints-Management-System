@@ -73,4 +73,68 @@ class Course
 
         return $result_arr;
     }
+
+    // Get Tags
+    public function get_tags(string $id): array
+    {
+        // Create query
+        $sql =
+            "SELECT
+            *
+        FROM
+            `tag`
+        WHERE
+            `category` = '$id'";
+
+        // echo $sql;
+
+        // Execute
+        $result = $this->conn->query($sql);
+
+        // Complaints array
+        $result_arr = array();
+
+        // Output data of each row to the result array
+        while ($row = $result->fetch_assoc()) {
+            $tag = $row["name"];
+            array_push($result_arr, $tag);
+        }
+
+        return $result_arr;
+    }
+
+    // Get Lecturers for course
+    public function get_lecturers(string $course_code): array
+    {
+        // Create query
+        $sql =
+            "SELECT
+            `name`
+        FROM
+            `lecturer`
+        WHERE
+            `lec_no` IN(
+                SELECT
+                    `lecturer`
+                FROM
+                    `lecturer-course`
+                WHERE
+                    `course` = '$course_code'
+            )";
+
+        // echo $sql;
+
+        // Execute
+        $result = $this->conn->query($sql);
+
+        // Complaints array
+        $result_arr = array();
+
+        // Output data of each row to the result array
+        while ($row = $result->fetch_assoc()) {
+            array_push($result_arr, $row["name"]);
+        }
+
+        return $result_arr;
+    }
 }
