@@ -13,9 +13,15 @@ if (isset($_GET['id'])) {
 
 
 try {
+    include "../model/Complaint.php";
+    $complaints = new Complaint($db);
     include_once "../model/Comment.php";
     $comments = new Comment($db);
-    echo json_encode($comments->get_comments($id));
+
+    echo json_encode(array(
+        'comments' => $comments->get_comments($id),
+        'complaint' => $complaints->get_single($id)
+    ));
     exit;
 } catch (Exception $e) {
     echo json_encode(
