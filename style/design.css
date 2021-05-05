@@ -1,6 +1,282 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "segoe UI bold", sans-serif;
+}
+
+body {
+    background: url('./assets/img/bg-gradient.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    height: 100vh;
+    /**/
+}
+
+.fit {
+    width: 50%;
+    height: 1000px;
+    margin: 2% auto;
+    position: relative;
+}
+
+.section {
+    width: 1200px;
+    height: 650px;
+    margin: 2% auto;
+    position: relative;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.blank {
+    background-color: #8e1300;
+    height: 4px;
+    width: 100%;
+}
+
+.contact {
+    background-color: #c4c4c4;
+    height: 30px;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    margin: 10px;
+    display: inline-block;
+    color: #fff;
+}
+
+.logins {
+    height: 150px;
+    width: 90%;
+    background-color: white;
+    padding-left: 10px;
+}
+
+.side {
+    float: left;
+}
+
+#pic {
+    margin-top: 20px;
+    height: 50%;
+    object-fit: contain;
+}
+
+.p {
+    margin-left: 800px;
+    padding-top: 40px;
+    border: 0;
+}
+
+.four {
+    width: 100%;
+    height: 50px;
+    background-color: #4f5d63;
+}
+
+a:link,
+a:visited {
+    color: white;
+    padding: 16px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #990000;
+}
+
+.standby {
+    background-color: #8e1300;
+    text-align: center;
+}
+
+.b {
+    padding: 8px;
+    margin-left: 2px;
+}
+
+.end {
+    background-color: white;
+    height: 30px;
+    width: 100%;
+}
+
+.maindiv {
+    width: 100%;
+    height: 420px;
+    background-image: url(./assets/img/compla.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    animation: slider 9s infinite linear;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.cmss {
+    background-color: #8e1300;
+    opacity: 0.7;
+    height: 60px;
+    width: 530px;
+    padding-top: 30px;
+    padding-left: 15px;
+    margin-left: 15px;
+}
+
+.cms {
+    color: white;
+    font-size: 25px;
+}
+
+@keyframes slider {
+    0% {
+        background-image: url(../assets/img/compla.jpg);
+    }
+    35% {
+        background-image: url(./assets/img/writeup.jpg);
+    }
+    75% {
+        background-image: url(./assets/img/student.jpg);
+    }
+}
+
+.end {
+    position: absolute;
+    bottom: 40px;
+    background-color: #fff;
+    width: 100%;
+    height: 40px;
+}
+
+.blan {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    background-color: #8e1300;
+    height: 3px;
+    width: 100%;
+}
+
+.last {
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    width: 100%;
+    height: 40px;
+}
+
+.write {
+    color: white;
+    font-size: 14px;
+    margin-left: 18px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.center {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main {
+    width: 380px;
+    /*height: 420px;*/
+    margin: 4% auto;
+    position: relative;
+    background: #fff;
+    margin-top: 10px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 6px solid #dfe0d8;
+}
+
+.main h2 {
+    /*margin:4% auto;*/
+    text-align: center;
+}
+
+.fill {
+    width: 320px;
+    height: 240px;
+    margin: 4% auto;
+    position: relative;
+    background: #eee;
+    padding: 15px;
+}
+
+.button-box {
+    width: 250px;
+    margin-left: 140px;
+    position: relative;
+}
+
+.btn {
+    background: transparent;
+    outline: none;
+    border: 0;
+    margin-left: 90px;
+    color: #262626;
+    padding: 2px;
+}
+
+.lbutton {
+    width: 315px;
+    margin: 10px auto;
+    padding: 5px;
+    margin-left: 10px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
+    text-transform: uppercase;
+    background: #8e1300;
+}
+
+.form-info {
+    top: 40px;
+    position: absolute;
+    padding-left: 6px;
+    width: 300px;
+}
+
+.checkbox {
+    margin-left: 18px;
+    margin-right: 5px;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 15px;
+    border: 0;
+}
+
+#student {
+    left: 0px;
+}
+
+#staff {
+    left: 350px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {

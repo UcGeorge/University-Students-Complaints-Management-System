@@ -55,7 +55,7 @@ function display_courses()
 		}
 
 		// Show the course using the template
-		echo "<a href='courseview.html' class='coursediv'>
+		echo "<a href='courseview.php?course={$course['course_code']}&name=$course_name' class='coursediv'>
 			<!-- picture -->
 			<div class='coursepic'>
 
@@ -92,13 +92,13 @@ function display_courses()
 function course_menu()
 {
 	// Declare global variables
-	global $user_data, $course_data, $course_img;
+	global $course_data;
 
 	// Loop through all courses in the course_data
 	foreach ($course_data as $course) {
 		// Assign useful variables needed for display
 		$course_name = $course['course_title'];
-		echo "<a href='courseview.html'>$course_name</a>";
+		echo "<a href='courseview.php?course={$course['course_code']}&name=$course_name'>$course_name</a>";
 	}
 }
 ?>
