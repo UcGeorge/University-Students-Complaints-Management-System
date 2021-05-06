@@ -280,18 +280,14 @@ function show_comments()
 
 
             <!-- search button -->
-
             <div class="searchbtn">
-                <div class="combtn">
-
-                    <input class="comntbtn" type="submit" name="subscribe" value="subscribe">
-
-                </div>
 
                 <!-- hover search input -->
                 <form>
                     <div class="hoverinput" onmouseover="hOver()" onmouseout="hOut()">
                         <input class="shinput" type="text" name="" placeholder="search complaints">
+
+
                     </div>
 
 
