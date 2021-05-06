@@ -3,7 +3,7 @@
 include "init.php";
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+    $id = base64_decode($_GET['id']);
 } else {
     echo json_encode(
         array('message' => 'Relevant parameter <id> is missing.')
