@@ -24,7 +24,7 @@ try {
         $dashboard_data['type'] = 'student';
     } else {
         $dashboard_data['user'] = $lecturers->get_lecturer($username);
-        $dashboard_data['type'] = 'lecturer';
+        $dashboard_data['type'] = 'staff';
     }
 
     // Get validated user's courses

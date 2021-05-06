@@ -122,7 +122,7 @@ if ($process_login) {
         if ($dashboard_data['type'] == 'student') {
             header("Location: ..\student\studentDash.php");
         } else {
-            header("Location: ..\lecturer\dashboard.html");
+            header("Location: ..\lecturer\dashboard.php");
         }
         exit();
     } else {
