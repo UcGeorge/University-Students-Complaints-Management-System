@@ -35,8 +35,8 @@ class Comment
         while ($row = $result->fetch_assoc()) {
             $complaint = array(
                 'id' => $row["id"],
-                'student' => $row["student"],
-                'lecturer' => $row["lecturer"],
+                'student' => $row["author-s"],
+                'lecturer' => $row["author-r"],
                 'text' => $row["text"],
                 'dateadded' => $row["dateadded"]
             );
@@ -48,5 +48,31 @@ class Comment
         }
 
         return $complaints_arr;
+    }
+
+    // Get comments for complaint
+    public function add_comment($id, $text, $author, $type)
+    {
+        // echo $id, $text, $author, $type;
+        // Create query
+        if ($type == 'student') {
+            $sql = "INSERT INTO 
+                `$this->table` 
+                (`author-s`, `complaint`, `text`) 
+            VALUES 
+                ('$author', '$id', '$text')";
+        } else {
+            $sql = "INSERT INTO 
+                `$this->table` 
+                (`author-r`, `complaint`, `text`) 
+            VALUES 
+                ('$author', '$id', '$text')";
+        }
+
+        if ($this->conn->query($sql) === TRUE) {
+            return "New record created successfully";
+        } else {
+            return "Error: " . $sql . "<br>" . $this->conn->error;
+        }
     }
 }
