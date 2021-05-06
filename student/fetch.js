@@ -77,9 +77,12 @@ const createCard = (course_title, course_code, active, personal) => {
 }
 
 //--------------------------------------------------------------------------------------------------------------
+    var searchField = "";
+    const onSearchChange = (event) => {
+        searchField = event.target.value;
+    }
 
-
-
+//-----------------------------------------------------------------------------------------------------------------------
     const logInMatric = 170805513;
     const logInPassword = "Test@123";
     // Create Header
@@ -101,8 +104,6 @@ const createCard = (course_title, course_code, active, personal) => {
     .then(info => {
         if (info.user.mat_no) {
             student = info;
-            //document.location.href = "studentPage.html";
-            //window.location = "studentPage.html";
             console.log(student);
             for (var i = 0; i < student.courses.length; i++) {
                 //console.log("yes im here");
@@ -113,16 +114,43 @@ const createCard = (course_title, course_code, active, personal) => {
             var active = 0;
             var personal = 0 ;
             for (var i = 0; i < student.courses.length; i++) {
+                // const filteredCourses = .filter((course) =>{
+                //     return student.course[i].course_title.toLowerCase().includes(searchField.toLowerCase());
+                // })
                 for (var j = 0; j < student.courses[i].complaints.length; j++) {
-                    var courseee = student.courses[i];
-                    // if (coursee.complaints[j].status == 'open') {
-                    //     active++;
-                    // }
-                    // if (coursee.complaints[j].author == student.user.name) {
-                    //     personal++;
-                    // }
+                    //var courseee = student.courses[i];
+                    if (student.courses[i].complaints[j].status === "open") {
+                        active++;
+                    }
+                    if (student.courses[i].complaints[j].author == student.user.name) {
+                        personal++;
+                    }
                 }
-                createCard(courseee.course_title, courseee.course_code, active, personal);
+                createCard(student.courses[i].course_title, student.courses[i].course_code, active, personal);
             }
+
+            const searchInput = document.querySelector("#searchinput");
+            
+            const filterCoursesWithKeypress = () => {
+                window.console.log;
+                if(searchInput.value.length > 0 && event.keyCode === 13) {
+                    const filteredCourses = student.courses.filter((course) => {
+                        return student.course[i].course_title.toLowerCase().includes(searchInput.value.toLowerCase());
+                    })
+                    for (var i = 0; i < student.courses.length; i++) {
+                        for (var j = 0; j < student.courses[i].complaints.length; j++) {
+                            //var courseee = student.courses[i];
+                            if (filteredCourses[i].complaints[j].status === "open") {
+                                active++;
+                            }
+                            if (filteredCourses[i].complaints[j].author == student.user.name) {
+                                personal++;
+                            }
+                        }
+                        createCard(filteredCourses[i].course_title, filteredCourses[i].course_code, active, personal);
+                    }
+                }
+            }
+            searchInput.addEventListener("keypress", filterCoursesWithKeypress);  
         }
     });

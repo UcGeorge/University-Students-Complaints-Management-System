@@ -74,7 +74,7 @@ if ($process_login) {
 
     // Set all request parameters
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'http://localhost:8080/University-Students-Complaints-Management-System/api/api/dashboard.php',
+        CURLOPT_URL => 'http://localhost/University-Students-Complaints-Management-System/api/api/dashboard.php',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,

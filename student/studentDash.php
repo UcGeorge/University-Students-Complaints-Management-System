@@ -216,9 +216,7 @@ function display_courses()
 				<!-- hover search input -->
 				<form>
 					<div class="hoverinput" onmouseover="hOver()" onmouseout="hOut()">
-						<input class="shinput" type="text" name="" placeholder="search complaints">
-
-
+						<input class="shinput" type="text" name="" placeholder="search complaints" id="searchinput">
 					</div>
 
 

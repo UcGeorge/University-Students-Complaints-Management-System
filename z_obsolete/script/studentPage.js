@@ -65,7 +65,7 @@ class Dashboard {
 
 	addCourseCard() {
 		for (var i = 0; i < this.state.courses.length; i++) {
-			creareCourseCard();
+			createCourseCard();
 		}
 	}
 	// addCourses = () => {
