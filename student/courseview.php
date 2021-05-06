@@ -213,7 +213,7 @@ function status_circle($is_stat)
 		<div class="profile">
 
 			<!-- unilag logo and home button -->
-			<a href="" class="logo">
+			<a href="../index.php" class="logo">
 				<img src="images/unilaglogo.png">
 			</a>
 
@@ -241,7 +241,7 @@ function status_circle($is_stat)
 
 						</a>
 						<hr>
-						<a href="">
+						<a href="../index.php">
 							<i class="fas fa-sign-out-alt"></i>
 							Logout
 
@@ -269,7 +269,7 @@ function status_circle($is_stat)
 		<div class="topnav">
 
 			<!-- CMS nav -->
-			<a href="" class="cmsnav">
+			<a href="../index.php" class="cmsnav">
 				<span>UNILAG-CMS</span>
 
 			</a>

@@ -211,7 +211,7 @@ function show_comments()
         <div class="profile">
 
             <!-- unilag logo and home button -->
-            <a href="studentDash.php" class="logo">
+            <a href="../index.php" class="logo">
                 <img src="images/unilaglogo.png">
             </a>
 
@@ -239,7 +239,7 @@ function show_comments()
 
                         </a>
                         <hr>
-                        <a href="">
+                        <a href="../index.php">
                             <i class="fas fa-sign-out-alt"></i>
                             Logout
 
@@ -267,7 +267,7 @@ function show_comments()
         <div class="topnav">
 
             <!-- CMS nav -->
-            <a href="" class="cmsnav">
+            <a href="../index.php" class="cmsnav">
                 <span>UNILAG-CMS</span>
 
             </a>

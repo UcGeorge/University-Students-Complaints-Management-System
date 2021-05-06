@@ -43,8 +43,8 @@ if (isset($_POST['staff'])) {
 
                     <div class="four">
                         <div class="contain">
-                            <a href="index.html" class="standby">UNILAG-CMS</a>
-                            <a href="login/login.html" class "click">User Login</a>
+                            <a href="" class="standby">UNILAG-CMS</a>
+                            <a href="login/login.php" class "click">User Login</a>
                         </div>
                     </div>
                     <div class=""></div>

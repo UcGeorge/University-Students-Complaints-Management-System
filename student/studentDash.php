@@ -132,7 +132,7 @@ function course_menu()
 		<div class="profile">
 
 			<!-- unilag logo and home button -->
-			<a href="" class="logo">
+			<a href="../index.php" class="logo">
 				<img src="images/unilaglogo.png">
 			</a>
 
@@ -166,7 +166,7 @@ function course_menu()
 
 						</a>
 						<hr>
-						<a href="">
+						<a href="../index.php">
 							<i class="fas fa-sign-out-alt"></i>
 							Logout
 
@@ -194,7 +194,7 @@ function course_menu()
 		<div class="topnav">
 
 			<!-- CMS nav -->
-			<a href="" class="cmsnav">
+			<a href="../index.php" class="cmsnav">
 				<span>UNILAG-CMS</span>
 
 			</a>

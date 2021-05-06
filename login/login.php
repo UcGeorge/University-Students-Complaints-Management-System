@@ -160,7 +160,7 @@ function show_error()
                 <input type="password" name="password" value="<?php echo $password; ?>" class="input-field" placeholder="Password">
                 <input type="checkbox" class="checkbox"><span>Remember Password</span>
                 <div class="button">
-                    <input type="submit" class="lbutton" value="Log In">
+                    <input type="submit" class="lbutton" value="Log In" style="text-transform: none;">
                 </div>
             </form>
         </div>
