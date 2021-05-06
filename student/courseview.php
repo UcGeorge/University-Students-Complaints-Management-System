@@ -25,7 +25,7 @@ $curl = curl_init();
 
 // Set all request parameters
 curl_setopt_array($curl, array(
-	CURLOPT_URL => "http://localhost:8080/University-Students-Complaints-Management-System/api/api/course.php?course_code={$_GET['course']}",
+	CURLOPT_URL => "http://localhost/University-Students-Complaints-Management-System/api/api/course.php?course_code={$_GET['course']}",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_ENCODING => '',
 	CURLOPT_MAXREDIRS => 10,

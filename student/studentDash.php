@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="studentdassh.css">
 
 	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
+	<script type="text/javascript" src="fetch.js"></script>
 
 </head>
 
@@ -89,18 +90,7 @@ function display_courses()
 	}
 }
 
-function course_menu()
-{
-	// Declare global variables
-	global $course_data;
 
-	// Loop through all courses in the course_data
-	foreach ($course_data as $course) {
-		// Assign useful variables needed for display
-		$course_name = $course['course_title'];
-		echo "<a href='courseview.php?course={$course['course_code']}&name=$course_name'>$course_name</a>";
-	}
-}
 ?>
 
 <body>
@@ -213,15 +203,10 @@ function course_menu()
 
 			<!-- drop down div -->
 
-			<div class="dropdown" onmouseover="mOver()" onmouseout="mOut()">
+			<div id = "courseOptions" class="dropdown" onmouseover="mOver()" onmouseout="mOut()">
 
 				<i class="triangle-up"></i>
 
-
-
-				<?php
-				course_menu();
-				?>
 			</div>
 
 
@@ -270,11 +255,8 @@ function course_menu()
 			<div class="availcourse">
 
 
+					<!-- coursecards go here -->
 
-
-				<?php
-				display_courses();
-				?>
 
 			</div>
 

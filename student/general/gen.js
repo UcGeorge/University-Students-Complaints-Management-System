@@ -1,6 +1,5 @@
 // General JS for pages
-
-
+console.log("the blue skys");
 //1. Create a course Dropdown on mouse over
 	
 
@@ -64,6 +63,3 @@
 
 	
 	}
-
-
-	
