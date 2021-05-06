@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>UNILAG-CMS | Open</title>
+    <title>UNILAG-CMS | Complaint</title>
 
     <link rel="stylesheet" type="text/css" href="general/gen.css">
     <link rel="stylesheet" type="text/css" href="openwrite.css">
@@ -416,6 +416,13 @@ function show_comments()
 
                     <!---- subscribers ---->
                     <h4><span><?php echo $the_complaint['subscribers'] ?></span> Subscribers</h4>
+
+                    <form method="post" style="visibility: hidden;">
+                        <!-- comment button -->
+                        <div class="subbtn" style="position: relative;height: 40px;border: none;">
+                            <input class="subtbtn" type="submit" name="subscribe" value="subscribe" style="cursor: pointer;position: absolute;right: 70px;top: 20px;width: 300px;height: 30px;background-color: #8E1300;color: white;border: none;padding: 4px 10px;border-radius: 6px;">
+                        </div>
+                    </form>
 
                 </div>
 

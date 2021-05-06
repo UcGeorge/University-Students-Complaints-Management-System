@@ -48,7 +48,8 @@ if (isset($_POST['staff'])) {
                         </div>
                     </div>
                     <div class=""></div>
-                    <div class="maindiv">
+                    <div class="maindiv" style="background-image: url(assets/img/compla.jpg);">
+                        <img src="assets/img/compla.jpg" alt="bg-image" style="height: 400px;">
                         <div class="cmss">
                             <p class="cms"> COMPLAINT MANAGEMENT SYSTEM </dip>
                         </div>

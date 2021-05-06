@@ -13,6 +13,7 @@ if (!isset($_POST['id']) || !isset($_POST['title']) || !isset($_POST['category']
 try {
     include_once "../model/Complaint.php";
     $complaints = new Complaint($db);
+    echo $_POST['tags'];
     echo json_encode(array('message' => $complaints->add_complaint(
         $_POST['id'],
         $_POST['title'],
@@ -21,6 +22,7 @@ try {
         $_POST['author'],
         json_decode($_POST['tags'])
     )));
+
     exit;
 } catch (Exception $e) {
     echo json_encode(

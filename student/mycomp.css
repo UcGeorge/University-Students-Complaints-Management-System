@@ -1,0 +1,447 @@
+
+/******  OPEN1 ******/
+
+/******** mbody *******/
+
+.mbody{
+	position: relative;
+
+	padding: 10px 0px 60px;
+	/*border: 1px solid yellow;*/
+	background-color: white;
+
+}
+
+.littlenav{
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+.littlenav a{
+	text-decoration: none;
+	color: #555;
+	font-size: 13px;
+
+}
+
+.fa-chevron-right{
+	margin: 0px 3px 0px 7px;
+	color:#bfbfbf;
+	font-size: 11px;
+}
+
+.backdiv a{
+
+	margin-left: 2px;
+	text-decoration: none;
+	color: #a81600; 
+	font-size: 11px;
+}
+
+
+.backdiv {
+	
+	color: #a81600; 
+	margin-left: 8px;
+	font-size: 11px;
+}
+
+
+
+
+/********** TOP **********/
+
+.top{
+	/*border: 1px solid blue;*/
+	padding: 10px 30px 5px;
+	width: 65%;
+	color: #555;
+}
+
+.tsecone{
+	/*border: 1px solid brown;*/
+}
+
+.tsecone h3{
+	color: #444;
+	display: inline-block;
+}
+
+
+
+
+
+.tsectwo{
+	/*border: 1px solid gold;*/
+	font-size: 12px;
+}
+.topen{
+	padding: 5px 10px;
+	background-color: orange;
+	border-radius: 20px;
+	color: white;
+	margin-right: 5px;
+}
+
+.tclose{
+	padding: 5px 10px;
+	background-color: blue;
+	border-radius: 20px;
+	color: white;
+	margin-right: 5px;
+}
+
+.fa-circle{
+	font-size: 3px;
+	margin: -4px 2px 2px 5px;
+}
+
+
+
+.tsecthree{
+	margin-top: 30px;
+	/*border: 1px solid pink;*/
+}
+
+
+
+
+
+
+
+hr{
+	height: 1px;
+	color:  #f2f2f2;
+	width: 97%;
+
+}
+
+
+
+
+
+/********** BOTTOM **********/
+
+.bottom{
+	position: relative;
+	/*border: 1px solid green;*/
+	/*margin-bottom: 100px;*/
+}
+
+
+.bsecone{
+	
+	width: 77%;
+	padding: 30px;
+
+	/*border: 1px solid red;*/
+	
+}
+
+
+.comwrtn{
+	position: relative;
+	/*border: 1px solid pink;*/
+	margin-bottom: 100px;
+}
+
+.triangle-left{
+	position: absolute;
+	top: 3px;
+	left:92.5px;
+	width: 0;
+	height: 0;
+
+	border-left: 20px solid pink;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	transform: rotate(-45deg);
+
+}
+
+.compic{
+	width: 10%;
+	/*border: 1px solid purple;*/
+}
+
+.compic img{
+	height: 70px;
+	width: 70px;
+}
+
+
+.combox{
+	margin-top: -73px;
+	
+	float: right;
+	clear: right;
+	width: 88%;
+	margin-bottom: 20px;
+
+}
+
+
+
+
+.combhead{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	padding:10px 15px;
+	font-size: 12px;
+	color: #555;
+	
+	border-top: 1px solid grey;
+	border-right: 1px solid grey;
+	background-color: pink;
+	
+	height: 40px;
+}
+
+.combbody{
+	padding:5px 15px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	color: #555;
+	border: 1px solid grey;
+	height: 120px;
+}
+
+
+
+.com2wrt{
+	
+
+}
+
+
+
+textarea{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	outline: none;
+	font-family: "Open Sans",sans-serif;
+	color: #555;
+	resize: none;
+	width: 100%;
+	height: 130px;
+	margin: 0px;
+	border: 1px solid grey;
+	border-bottom: none;
+	padding: 15px;
+
+}
+
+.combtn{
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	position: relative;
+	height: 30px;
+	background-color: #e6e6e6;
+	border: 1px solid grey;
+	border-top: none;
+}
+
+.comntbtn{
+	cursor: pointer;
+	position: absolute;
+	right: 5px;
+	top:3px;
+	background-color: #8E1300;
+	color: white;
+	border: none;
+	padding: 4px 10px;
+	border-radius: 6px;
+}
+
+.bsectags{
+	
+	right: 0px;
+	width: 23%;
+	top: 20px;
+	padding-bottom: 30px;
+	position: absolute;
+	/*border: 1px solid yellow;*/
+	color: #8E1300;
+	
+}
+
+
+
+.bstags{
+	cursor: pointer;
+	display: inline-block;
+	/*border: 1px solid yellow;*/
+	font-size: 11px;
+	background-color: pink;
+	padding: 5px 20px;
+	border-radius: 20px;
+	margin: 7px 10px 7px 0;
+	
+}
+
+
+
+
+/************ OPEN 2  ****************/
+/*i.e. when styles for when more than one person dey chat*/
+
+/******  when there are no comments *****/
+
+.nocomms{
+	
+	/*border: 1px solid blue;*/
+	margin: 30px 30px 60px;
+	text-align: center;
+	color: #555;
+}
+
+
+
+/******  comment written two *******/
+.comwrtn2{
+	
+	position: relative;
+	/*border: 1px solid pink;*/
+	/*margin-bottom: 10px;*/
+}
+
+.triangle-right{
+	position: absolute;
+	top: 18px;
+	right: 92.5px;
+	width: 0;
+	height: 0;
+
+	border-left: 20px solid pink;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	transform: rotate(135deg);
+
+}
+
+.compic2{
+	margin-top: -180px;
+	width: 10%;
+	float: right;
+	clear: right;
+	
+	/*border: 1px solid purple;*/
+}
+
+.compic2 img{
+	margin-left: 15px;
+	height: 70px;
+	width: 70px;
+}
+
+
+.combox2{
+	margin-top: -1px;
+	
+
+	width: 88%;
+	margin-bottom: 20px;
+
+}
+
+
+
+
+.combhead2{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	padding:10px 5px 10px 570px;
+	font-size: 12px;
+	color: #555;
+	
+	border-top: 1px solid grey;
+	border-left: 1px solid grey;
+	background-color: pink;
+	
+	height: 40px;
+}
+
+
+
+.combbody2{
+	padding:5px 15px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	color: #555;
+	border: 1px solid grey;
+	height: 120px;
+}
+
+
+
+
+/****  Subscribers *****/
+
+.subpic{
+	/*border: 1px solid red;*/
+	margin-bottom: 10px;
+}
+
+.subpic img{
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	margin:0px 5px 0px 0px;
+}
+
+
+.allsub{
+	cursor: pointer;
+	font-size: 13px;
+}
+
+
+/********  Side lecturers  ********/
+
+.sidelec{
+	margin: 30px 0px 15px;
+	
+	/*border: 1px solid yellow;*/
+	
+}
+
+
+.sideleclec{
+	font-size: 13px;
+	color: #8E1300;
+	margin: 10px 0px;
+}
+
+
+.sidelename{
+
+}
+
+
+.sidelecsname{
+	font-size: 13px;
+	display: inline-block;
+	color: white;
+	background-color: #8E1300;
+	padding: 3px 8px;
+	border-radius: 50%;
+	margin: 5px 0px;
+}
+
+.sidelecfname{
+	font-size: 11px;
+	display: inline-block;
+	color: black;
+}
+
+
+.unsubscr{
+	margin: 10px auto;
+	padding: 5px 55px;
+	background-color:  #8E1300;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+}

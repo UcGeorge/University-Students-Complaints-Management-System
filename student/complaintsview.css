@@ -5,12 +5,13 @@
 .mbody{
 	position: relative;
 
-	padding: 10px 0px 150px;
+	padding: 10px 0px 220px;
 	/*border: 1px solid yellow;*/
 	background-color: white;
 }
 
 .littlenav{
+	margin-left: 15px;
 	margin-bottom: 10px;
 }
 .littlenav a{
@@ -203,7 +204,7 @@ height: 12px;
 .searchdiv{
 	
 margin-top: -10px;
-margin-left: 615px; 
+margin-left: 465px; 
 /*border: 1px solid grey;*/
 margin-bottom: 20px;
 
@@ -222,11 +223,29 @@ margin-bottom: 20px;
 	background-position: 5px 5px;
 	background-repeat: no-repeat;
 	outline: none;
+	display: inline-block;
 	
 	font-size: 15px;
 	
 }
 
+
+.newcompbtn{
+	display: inline-block;
+	margin-left: 10px;
+	
+
+}
+
+.newcompbtn button{
+	padding: 6px 15px;
+	background-color: #8E1300;
+	color: white;
+	border-radius: 10px;
+	font-size: 13px;
+	border: none;
+	cursor: pointer;
+}
 
 
 /**** complaint div ****/
@@ -257,6 +276,10 @@ margin-bottom: 20px;
 .fa-exclamation-circle{
 	margin-right: 5px;
 
+}
+
+.aboxgan{
+	text-decoration: none;
 }
 
 .boxgan{

@@ -1,0 +1,240 @@
+/***********  Course complaint css********/
+
+/****  MBODY ****/
+
+.mbody{
+	position: relative;
+
+	padding: 10px 0px 60px;
+	/*border: 1px solid yellow;*/
+	background-color: white;
+
+}
+
+.littlenav{
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+.littlenav a{
+	text-decoration: none;
+	color: #555;
+	font-size: 13px;
+
+}
+
+.fa-chevron-right{
+	margin: 0px 3px 0px 7px;
+	color:#bfbfbf;
+	font-size: 11px;
+}
+
+.backdiv a{
+
+	margin-left: 2px;
+	text-decoration: none;
+	color: #a81600; 
+	font-size: 11px;
+}
+
+
+.backdiv {
+	
+	color: #a81600; 
+	margin-left: 8px;
+	font-size: 11px;
+}
+
+
+
+
+/*******  SEC 1 ******/
+
+
+.secomp1{
+	padding: 5px 20px;
+	/*border: 1px solid yellow;*/
+}
+
+.secomp1 p{
+	color: #444;
+	font-size: 18px;
+}
+
+
+.secomp2{
+	/*border: 1px solid brown;*/
+}
+
+.secomp2 div{
+	display: inline-block;
+	margin: 5px 10px 5px 20px;
+	color: #8E1300;
+}
+
+.title{
+	color: #555;
+	outline: none;
+	width: 400px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 1px solid grey;
+	
+
+}
+
+
+.categry{
+	border: none;
+	color: #555;
+	outline: none;
+	width: 120px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 1px solid grey;
+}
+
+select{
+	border: none;
+	color: #555;
+	outline: none;
+	width: 120px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 1px solid grey;
+	
+
+
+}
+
+
+
+
+
+.secomp3{
+	/*border: 1px solid blue;*/
+}
+
+.secomp31{
+	/*border: 1px solid black;*/
+	width: 78%;
+}
+
+.secomp31 div{
+	color: #8E1300;
+	margin: 20px 10px 5px 20px;
+}
+
+.secomp31 button{
+	padding: 5px 20px;
+	color: white;
+	background-color: #8E1300;
+	border-radius: 10px;
+	border: none;
+	font-size: 11px;
+}
+
+textarea{
+	font-family: "Open Sans",sans-serif;
+	outline: none;
+	border: 1px solid grey;
+	border-radius: 10px;
+	width: 100%;
+	height: 250px;
+	resize: none;
+	padding: 15px;
+	margin-bottom: 20px;
+	display: block;
+}
+
+.secomp32{
+	float: right;
+	clear: right;
+	margin-left: 78%;
+	margin-top: -339px;
+
+	/*border: 1px solid red;*/
+}
+
+
+
+.catgrydiv{
+	/*border: 1px solid blue;*/
+	margin: 18px 5px ;
+	color: #a81600; 
+
+}
+
+.catgrydiv h4{
+	margin: 5px 0px;
+	
+
+}
+
+
+.catgrydiv p{
+	margin: 5px 0px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.catgrydiv span b{
+	font-size: 10px;
+	cursor: pointer;
+}
+
+
+.sstag{
+	display: inline-block;
+	color: #a81600; 
+	font-size: 10px;
+	padding: 4px 5px;
+	border-radius: 10px;
+	margin: 2px 5px 2px 0px;
+	background-color: pink;
+	cursor: pointer;
+}
+
+
+.sctag{
+	display: inline-block;
+	background-color: #a81600; 
+	color: white;
+	font-size: 10px;
+	padding: 4px 5px;
+	border-radius: 10px;
+	margin: 2px 5px 2px 0px;
+	cursor: pointer;
+	
+}
+
+.fa-plus{
+	font-size: 10px;
+	color: #a81600;
+	margin-right: 3px; 
+}
+
+.fa-check{
+	font-size: 10px;
+	color: white;
+	margin-right: 3px; 
+}
+
+
+.sc32tag{
+	color: #8E1300;
+	margin: 5px;
+}
+
+.sc32tag h3{
+	margin-bottom: 10px;
+}
+.sc32tag input{
+	outline: none;
+	width: 95%;
+	padding: 5px 10px;
+	border-radius: 30px;
+	border: 1px solid grey;
+	
+}
+
+

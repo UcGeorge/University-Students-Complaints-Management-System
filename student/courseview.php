@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-	<meta charset="utf-8">
-	<title>UNILAG-CMS | Inbox</title>
-
-	<link rel="stylesheet" type="text/css" href="general/gen.css">
-
-	<link rel="stylesheet" type="text/css" href="courseview.css">
-	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
-
-</head>
-
 <?php
 // Start the session
 session_start();
 // Get useful session variables
 $user = $_SESSION['dashboard'];
 $auth = $_SESSION["auth"];
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+	$_SESSION['course_code'] = $_GET['course'];
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	header("Location: add_complaint.php?category={$_SESSION['course_code']}");
+}
 
 // Using cURL as the HTTP request library
 $curl = curl_init();
@@ -48,6 +44,7 @@ curl_close($curl);
 $course_data = json_decode($response, true);
 $num_open =  $course_data['open'];
 $num_personal = $course_data['personal'];
+$_SESSION['course_data'] = $course_data;
 
 // Extract user's data from the dashboard data
 $user_data = $user['user'];
@@ -183,6 +180,18 @@ function status_circle($is_stat)
 }
 
 ?>
+
+<head>
+
+	<meta charset="utf-8">
+	<title>UNILAG-CMS | <?php echo $_GET['course']; ?></title>
+
+	<link rel="stylesheet" type="text/css" href="general/gen.css">
+
+	<link rel="stylesheet" type="text/css" href="courseview.css">
+	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
+
+</head>
 
 <body>
 
@@ -444,6 +453,13 @@ function status_circle($is_stat)
 
 			<div class="rightside">
 
+
+				<form method="post">
+					<!-- comment button -->
+					<div class="subbtn" style="position: relative;height: 40px;border: none;">
+						<input class="subtbtn" type="submit" name="add" value="New Complaint" style="cursor: pointer;position: absolute;right: 270px;top: 0px;width: 150px;height: 30px;background-color: #8E1300;color: white;border: none;padding: 4px 10px;border-radius: 6px;">
+					</div>
+				</form>
 
 				<!----------- complaint div ----------->
 				<div class="complntdiv">

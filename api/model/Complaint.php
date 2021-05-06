@@ -373,10 +373,24 @@ class Complaint
         }
 
         foreach ($tags as $tag) {
+            $sql2 = "SELECT `id` FROM `tag` WHERE `name` = $tag";
+            echo $sql2;
+            $tag_id = '';
+
+            if ($result3 = $this->conn->query($sql2)) {
+                // return "New record created successfully";
+                while ($row2 = $result3->fetch_assoc()) {
+                    $tag_id = $row2["id"];
+                }
+            } else {
+                return "Error: " . $sql . "<br>" . $this->conn->error;
+            }
+
+
             $sql = "INSERT INTO 
                     `tag-complaint` (`tag`, `complaint`) 
                 VALUES
-                    ($tag, '$iid')";
+                    ($tag_id, '$iid')";
 
             if ($this->conn->query($sql) === TRUE) {
                 // return "New record created successfully";

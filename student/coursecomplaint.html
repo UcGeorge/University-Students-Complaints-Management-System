@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>UNILAG-CMS | Complaints</title>
+
+	<link rel="stylesheet" type="text/css" href="general/gen.css">
+	<link rel="stylesheet" type="text/css" href="coursecomplaint.css">
+	
+	<script defer src="../fontawesome-free-5.15.2-web/js/all.js"></script>
+
+</head>
+<body>
+
+	<div id="body">
+
+	<!------- top Social links ------->
+
+	<div class="head">
+
+		<!-- left link -->
+		<div class="leftlink">
+		<a href=""><i class="far fa-bookmark"></i>https://unilag.edu.ng</a>
+		<a href=""><i class="far fa-envelope"></i>communicationsunit@unilag.edu.ng</a>
+		</div>
+
+		<!-- right socials -->
+		<div class="socials">
+			<a href=""><i class="fab fa-facebook"></i></a>
+			<a href=""><i class="fab fa-twitter"></i></a>
+			<a href=""><i class="fab fa-instagram"></i></a>
+		</div>
+		
+		
+	</div>
+	
+
+	<!------- profiles names and logos ------->
+	<div class="profile">
+
+		<!-- unilag logo and home button -->
+		<a href="" class="logo">
+			<img src="images/unilaglogo.png" >
+		</a>
+
+		<!-- user icon and name -->
+		<div class="iconname">
+
+			<div class="username">
+				<img src="images/notifications.svg">
+				<p><b>IGWE CHIDERA HILARY</b></p>
+				<i onclick="showhide();" class="triangle-downs"></i>
+
+				<!-- user dropdown -->
+				
+					<div class="userdrop">
+					<a href="studentdash.html">
+						<i class="fas fa-tachometer-alt"></i>
+						Dashboard
+						
+					</a>
+					<hr>
+
+					<a href="complaintsview.html">
+						<i class="fas fa-inbox"></i>
+						My Complaints
+						
+					</a>
+
+					<a href="">
+						<i class="fas fa-book"></i>
+						My Courses
+						
+					</a>
+					<hr>
+					<a href="">
+						<i class="fas fa-sign-out-alt"></i>
+						Logout
+						
+					</a>
+				</div>
+				
+				
+
+
+			</div>
+
+			<div class="usericon">
+				<img src="images/usericon.png">
+			</div>
+			
+		</div>
+		
+	</div>
+	
+
+
+
+	<!------- top navigation ------->
+
+	<div class="topnav">
+
+		<!-- CMS nav -->
+		<a href="" class="cmsnav">
+			<span>UNILAG-CMS</span>
+			
+		</a>
+
+		<!-- My inbox nav -->
+		<a href="complaintsview.html" class="inboxnav">
+			<span>My Complaints</span>
+			
+		</a>
+
+		<!-- My Courses nav -->
+		<a href="" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
+			<span>My Courses </span><i class="triangle-down"></i>
+			
+		</a>
+
+		<!-- drop down div -->
+		
+		<div class="dropdown" onmouseover="mOver()" onmouseout="mOut()">
+			
+			<i class="triangle-up"></i>
+			
+
+
+			<a href="coursecomplaint.html">CSC434</a>
+			<a href="">CSC434</a>
+			<a href="">CSC434</a>
+			<a href="">CSC434</a>
+		</div>
+
+
+		<!-- search button -->
+		<div class="searchbtn">
+
+			<!-- hover search input -->
+			<form>
+				<div class="hoverinput" onmouseover="hOver()" onmouseout="hOut()">
+					<input class="shinput" type="text" name="" placeholder="search complaints">
+
+				
+			</div>
+
+			
+			<input class="searchsub" type="submit" name="" value=""  onmouseover="hOver()" onmouseout="hOut()">
+
+			</form>
+			
+			
+		</div>
+		
+	</div>
+
+	
+
+
+	<!-------- body ------->
+
+	<div class="mbody">
+
+
+		<!-- A little direction nav -->
+
+		<div class="littlenav">
+			<a href="">Home</a><span class="fas fa-chevron-right"> </span>
+			<a href="">My Courses</a><span class="fas fa-chevron-right"> </span>
+			<a href="courseview.html">CSC 422</a><span class="fas fa-chevron-right"> </span>
+			<a href="coursecomplaint.html">New Complaint</a>
+			
+		</div>
+
+
+
+		<!---------- back div ---------->
+		<div class="backdiv">
+			<span class="fas fa-chevron-left"> </span><a href="">back</a>
+		</div>
+
+
+
+		<!--------- SEC 1  ---------->
+
+		<div class="secomp1">
+			<p><b>Data Communiactions</b> - New Complaints</p>
+		</div>
+
+
+		<form>
+			<!--------- SEC 2  ---------->
+
+		<div class="secomp2">
+			<div>
+				<label><b>Title*</b> </label><br>
+				<input class="title" type="text" name="">
+			</div>
+
+			<div>
+				<label><b>Category*</b> </label><br>
+				<input class="categry" type="text" name="" value="CSC434" disabled="">
+			</div>
+			
+			
+		</div>
+
+
+
+		<!--------- SEC 3  ---------->
+
+		<div class="secomp3">
+
+			<!----- sec 3.1 ----->
+			<div class="secomp31">
+				<div>
+				<label><b>Description*</b></label><br>
+				<textarea>
+					
+				</textarea>
+
+
+				<button><b> Open <span>#12345</span></b></button>
+				</div>
+
+				
+				
+			</div>
+
+			<!----- sec 3.2 ----->
+			<div class="secomp32">
+				<!-- Tags -->
+			<div class="catgrydiv">
+				<h4>Tags</h4><br>
+				<span class="sstag"><b><i class="fas fa-plus"></i>registration</b></span>
+				<span class="sctag"><b><i class="fas fa-check"></i>comprehension</b></span>
+				<span class="sctag"><b><i class="fas fa-check"></i>lecturer</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>continous assesment</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>exam</b></span>
+				<span class="sstag"><b><i class="fas fa-plus"></i>project</b></span>
+				<span><b>more...</b></span>
+			</div>
+
+
+				<!-- Add a tag -->
+				<div class="sc32tag">
+					<h3>Add tag</h3>
+					<input type="text" name="">
+					
+				</div>
+				
+			</div>
+			
+		</div>
+
+
+		</form>
+
+		
+
+
+		
+
+
+	
+
+		
+	</div>
+	
+
+
+
+	<!------- footer -------->
+	<div class="foot">
+		<span>© 2021. All Rights Reserved | Design by <span class="footspan">CSC405 - PROJECT GROUP7</span> </span>
+	</div>
+
+	</div>
+
+	<script type="text/javascript" src="general/gen.js"></script>
+
+</body>
+</html>
