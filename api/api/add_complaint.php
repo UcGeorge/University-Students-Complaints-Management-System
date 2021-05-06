@@ -2,37 +2,25 @@
 
 include "init.php";
 
-if (isset($_GET['id'])) {
-    $course_code = $_GET['id'];
-} else {
+if (!isset($_POST['id']) || !isset($_POST['title']) || !isset($_POST['category']) || !isset($_POST['desc']) || !isset($_POST['author']) || !isset($_POST['tags'])) {
     echo json_encode(
-        array('message' => 'Relevant parameter <id> is missing.')
+        array('message' => 'Relevant parameter is missing.')
     );
     exit;
 }
 
 
 try {
-    // include_once "../model/Course.php";
-    // $courses = new Course($db);
-    // $list_of_tags = $courses->get_tags($course_code);
-    // $lecturers = $courses->get_lecturers($course_code);
-
-    // include_once "../model/Complaint.php";
-    // $complaints = new Complaint($db);
-    // $num_open = $complaints->get_num_open($course_code);
-    // $num_closed = $complaints->get_num_closed($course_code);
-    // $num_personal = $complaints->get_num_personal($course_code, $username);
-    // $course_complaints = $complaints->get_by_course($course_code);
-
-    // echo json_encode(array(
-    //     'open' => $num_open,
-    //     'closed' => $num_closed,
-    //     'personal' => $num_personal,
-    //     'complaints' => $course_complaints,
-    //     'tags' => $list_of_tags,
-    //     'lecturers' => $lecturers
-    // ));
+    include_once "../model/Complaint.php";
+    $complaints = new Complaint($db);
+    echo json_encode(array('message' => $complaints->add_complaint(
+        $_POST['id'],
+        $_POST['title'],
+        $_POST['desc'],
+        $_POST['category'],
+        $_POST['author'],
+        json_decode($_POST['tags'])
+    )));
     exit;
 } catch (Exception $e) {
     echo json_encode(
