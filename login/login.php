@@ -7,7 +7,6 @@
     <title>login page</title>
 
     <link rel="stylesheet" type="text/css" href="../style/design.css">
-    <script src="login.js" type="text/javascript"></script>
 </head>
 
 <?php
