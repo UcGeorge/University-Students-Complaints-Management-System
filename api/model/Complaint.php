@@ -267,4 +267,90 @@ class Complaint
 
         return $num;
     }
+
+    // Get Complaints by course/category
+    public function get_single($id)
+    {
+        // Create query
+        $sql = "SELECT
+                    $this->table.`id`,
+                    `student`.`name` as `author`,
+                    $this->table.`category`,
+                    $this->table.`status`,
+                    $this->table.`title`,
+                    $this->table.`description`,
+                    $this->table.`dateadded`
+                FROM
+                    $this->table
+                INNER JOIN `student` ON $this->table.`author` = `student`.`mat_no`
+                WHERE
+                    `id` = '$id'";
+        // echo $sql;
+
+        // Execute
+        $result = $this->conn->query($sql);
+
+        // Complaints array
+        $complaints_arr = array();
+
+        // Output data of each row to complaint array
+        while ($row = $result->fetch_assoc()) {
+
+            // Create query
+            $sql = "SELECT
+                    *
+                FROM
+                    `student-complaint`
+                WHERE
+                    `complaint` = {$row["id"]}";
+
+            // Execute
+            if ($result2 = $this->conn->query($sql)) {
+                $num = mysqli_num_rows($result2);
+            } else {
+                $num = 0;
+            }
+
+            // Create query
+            $sql = "SELECT
+                    `tag`.`name` as `name`
+                FROM
+                    `tag-complaint`
+                INNER JOIN `tag` ON `tag-complaint`.`tag` = `tag`.`id`
+                WHERE
+                    `complaint` = '{$row["id"]}'";
+
+            // echo $sql;
+
+            // Execute
+            if ($result3 = $this->conn->query($sql)) {
+                $tag_arr = array();
+
+                // Output data of each row to the result array
+                while ($row2 = $result3->fetch_assoc()) {
+                    $tag = $row2["name"];
+                    array_push($tag_arr, $tag);
+                }
+            } else {
+                $tag_arr = [];
+            }
+
+
+            $complaint = array(
+                'id' => $row["id"],
+                'author' => $row["author"],
+                'category' => $row["category"],
+                'status' => $row["status"],
+                'title' => $row["title"],
+                'description' => $row["description"],
+                'dateadded' => $row["dateadded"],
+                'subscribers' => $num,
+                'tags' => $tag_arr
+            );
+
+            $complaints_arr = $complaint;
+        }
+
+        return $complaints_arr;
+    }
 }

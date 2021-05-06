@@ -150,7 +150,7 @@ function show_error()
 ?>
 
 <body>
-    <img src="../assets/img/logoo.png" class="center">
+    <img src="../student/images/unilaglogo.png" class="center">
     <div class="main">
         <h2>UNILAG CMS<h2 style="font-weight: lighter; margin-bottom: 10px;"><?php echo strtoupper($user_type); ?></h2>
         </h2>
