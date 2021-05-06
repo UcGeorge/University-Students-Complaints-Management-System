@@ -47,138 +47,76 @@ curl_close($curl);
 // JSON decode the response
 $course_data = json_decode($response, true);
 $num_open =  $course_data['open'];
-$num_personal = $course_data['personal'];
+$num_closed = $course_data['closed'];
 
 // Extract user's data from the dashboard data
 $user_data = $user['user'];
+
+// Extract user's courses data from the dashboard data
+$course_data_gen = $user['courses'];
+
+function course_menu()
+{
+	// Declare global variables
+	global $course_data_gen;
+
+	// Loop through all courses in the course_data
+	foreach ($course_data_gen as $course) {
+		// Assign useful variables needed for display
+		$course_name = $course['course_title'];
+		echo "<a href='courseview.php?course={$course['course_code']}'>$course_name</a>";
+	}
+}
 
 function show_tags()
 {
 	global $course_data;
 
 	foreach ($course_data['tags'] as $tag) {
-		echo '<span class="sstag"><b>' . $tag . '</b></span>';
-	}
-}
-
-function ccircle($status)
-{
-	return $status == "open" ? "ocircle" : "bcircle";
-}
-
-$sorted_complaint = array();
-
-if (!isset($_GET['category']) && !isset($_GET['status'])) {
-	$sorted_complaint = $course_data['complaints'];
-}
-
-if (isset($_GET['category'])) {
-	$category = $_GET['category'];
-	if ($category == 'personal') {
-		global $course_data;
-
-		foreach ($course_data['complaints'] as $complaint) {
-			if (strtolower($complaint['author']) == strtolower($user_data['name'])) {
-				array_push($sorted_complaint, $complaint);
-			}
-		}
-	} else {
-		$sorted_complaint = $course_data['complaints'];
-	}
-}
-
-if (isset($_GET['status'])) {
-	$sorted_complaint = array();
-	$status = $_GET['status'];
-	global $course_data;
-	foreach ($course_data['complaints'] as $complaint) {
-		if ($complaint['status'] == $status) {
-			array_push($sorted_complaint, $complaint);
-		}
-	}
-	if ($status == 'all') {
-		$sorted_complaint = $course_data['complaints'];
+		echo '<span class="sstag"><b><i class="fas fa-plus"></i>' . $tag . '</b></span>';
 	}
 }
 
 function show_complaints()
 {
-	global $sorted_complaint;
+	global $course_data;
 
-	foreach ($sorted_complaint as $complaint) {
+	foreach ($course_data['complaints'] as $complaint) {
 		$tags = $complaint['tags'];
 		$tags_string = '';
 		foreach ($tags as $tag) {
 			$tags_string .= "<span class='stag'><b>$tag</b></span>";
 		}
-
 		echo '
-		<a href="complaintview.php?id=' . base64_encode($complaint['id']) . '" style="text-decoration: none;">
 		<div class="boxgan">
 			<div class="secone">
 				<div class="shead">
-					<div class="' . ccircle($complaint["status"]) . '"></div>
+					<div class="ocircle"></div>
 					<span class="secomhead"><b>' . $complaint['title'] . '</b></span>
 				</div>
 				<div class="problem">
-					<span class="secproblmno">' . $complaint['subscribers']  . ' </span>
-					<span>students have this problem</span>
+					<span class="secproblmno">1</span>
+					<span>' . $complaint['subscribers']  == '0' ? 'No' : $complaint['subscribers']  . ' student has this problem</span>
 				</div>
 			</div>
 			<div class="seccomp">
-				<p>' . $complaint['description'] . ' </p>
+				<p>' . $complaint['description'] . '</p>
 
 			</div>
 			<div class="secthree">
 				<div class="sectag">
-					' . $tags_string . '
+				' . $tags_string . '
 				</div>
 				<div class="sectime">
-					<span class="seccompid" style="color: darkblue;">' . $complaint['id'] . '</span>
+					<span class="seccompid">' . $complaint['id'] . '</span>
 					<span class="">opened</span>
 					<span class="seccomptime">' . $complaint['dateadded'] . '</span>
-					<span style="color: darkblue;">by</span>
-					<span class="seccomperson" style="color: darkblue;">' . $complaint['author'] . '</span>
+					<span>by</span>
+					<span class="seccomperson">' . $complaint['author'] . '</span>
 
 				</div>
 			</div>
-		</div>
-		</a>
-		';
-	}
-}
-
-function category_circle($is_cat)
-{
-	if (isset($_GET['category'])) {
-		if ($is_cat == $_GET['category']) {
-			echo '<div class=" currentbcirc"></div>';
-		} else {
-			echo '<span class="blankcircles "></span>';
-		}
-	} else {
-		if ($is_cat == 'all') {
-			echo '<div class=" currentbcirc"></div>';
-		} else {
-			echo '<span class="blankcircles "></span>';
-		}
-	}
-}
-
-function status_circle($is_stat)
-{
-	if (isset($_GET['status'])) {
-		if ($is_stat == $_GET['status']) {
-			echo '<div class=" currentbcirc"></div>';
-		} else {
-			echo '<span class="blankcircles "></span>';
-		}
-	} else {
-		if ($is_stat == 'all') {
-			echo '<div class=" currentbcirc"></div>';
-		} else {
-			echo '<span class="blankcircles "></span>';
-		}
+		</div>';
 	}
 }
 
@@ -194,8 +132,8 @@ function status_circle($is_stat)
 
 			<!-- left link -->
 			<div class="leftlink">
-				<a href="https://unilag.edu.ng"><i class="far fa-bookmark"></i>https://unilag.edu.ng</a>
-				<a href="mailto:communicationsunit@unilag.edu.ng"><i class="far fa-envelope"></i>communicationsunit@unilag.edu.ng</a>
+				<a href=""><i class="far fa-bookmark"></i>https://unilag.edu.ng</a>
+				<a href=""><i class="far fa-envelope"></i>communicationsunit@unilag.edu.ng</a>
 			</div>
 
 			<!-- right socials -->
@@ -234,6 +172,12 @@ function status_circle($is_stat)
 
 						</a>
 						<hr>
+
+						<a href="">
+							<i class="fas fa-inbox"></i>
+							My Inbox
+
+						</a>
 
 						<a href="studentDash.php">
 							<i class="fas fa-book"></i>
@@ -274,12 +218,30 @@ function status_circle($is_stat)
 
 			</a>
 
-			<!-- My Courses nav -->
-			<a href="studentDash.php" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
-				<span>My Courses </span>
+			<!-- My inbox nav -->
+			<a href="" class="inboxnav">
+				<span>My Inbox</span>
 
 			</a>
 
+			<!-- My Courses nav -->
+			<a href="" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
+				<span>My Courses </span><i class="triangle-down"></i>
+
+			</a>
+
+			<!-- drop down div -->
+
+			<div class="dropdown" onmouseover="mOver()" onmouseout="mOut()">
+
+				<i class="triangle-up"></i>
+
+
+
+				<?php
+				course_menu();
+				?>
+			</div>
 
 
 			<!-- search button -->
@@ -308,7 +270,7 @@ function status_circle($is_stat)
 
 		<!-------- body ------->
 
-		<div class="mbody" style="padding-bottom: 360px; padding-left: 15px; padding-top: 15px;">
+		<div class="mbody">
 
 
 
@@ -321,8 +283,8 @@ function status_circle($is_stat)
 			<!-- A little direction nav -->
 
 			<div class="littlenav">
-				<a href="./studentDash.php">Home</a><span class="fas fa-chevron-right"> </span>
-				<a href="./studentDash.php">My Course</a><span class="fas fa-chevron-right"> </span>
+				<a href="">Home</a><span class="fas fa-chevron-right"> </span>
+				<a href="">My Course</a><span class="fas fa-chevron-right"> </span>
 				<a href=""><?php echo $_GET['name'] ?></a>
 
 			</div>
@@ -334,7 +296,7 @@ function status_circle($is_stat)
 
 				<!---------- back div ---------->
 				<div class="backdiv">
-					<span class="fas fa-chevron-left"> </span><a href="./studentDash.php">back</a>
+					<span class="fas fa-chevron-left"> </span><a href="">back</a>
 				</div>
 
 
@@ -359,9 +321,9 @@ function status_circle($is_stat)
 						<!-- circle -->
 						<div class="bcircle"></div>
 						<!-- numbers -->
-						<span class="bnumber"><?php echo $num_personal ?></span>
+						<span class="bnumber"><?php echo $num_closed ?></span>
 						<!-- word -->
-						<span>Personal complaints</span>
+						<span>Closed complaints</span>
 
 					</div>
 
@@ -377,45 +339,38 @@ function status_circle($is_stat)
 					<div class="catgrydiv">
 						<h4>Tags</h4><br>
 						<?php show_tags() ?>
+						<span><b>more...</b></span>
 					</div>
 
 					<!-- category -->
 					<div class="catgrydiv">
 						<h4>Category</h4><br>
-						<?php category_circle('all') ?>
-						<a style="text-decoration: none; color: #a81600;" href="<?php echo "./courseview.php?course={$_GET['course']}&name={$_GET['name']}&category=all" ?>">
-							<p>All complaints</p>
-						</a><br>
+						<div class=" currentbcirc">
+							<div class="blankcircle"></div>
+						</div>
+						<p>All categories</p><br>
 
-						<?php category_circle('personal') ?>
-						<a style="text-decoration: none; color: #a81600;" href="<?php echo "./courseview.php?course={$_GET['course']}&name={$_GET['name']}&category=personal" ?>">
-							<p>Personal complaints</p>
-						</a><br>
+						<span class="blankcircles "></span>
+						<p>Personal complaints</p><br>
 
 					</div>
 
 					<!-- status -->
 					<div class="catgrydiv">
 						<h4>Status</h4><br>
-						<?php status_circle('all') ?>
-						<a style="text-decoration: none; color: #a81600;" href="<?php echo "./courseview.php?course={$_GET['course']}&name={$_GET['name']}&status=all" ?>">
-							<p>All complaints</p>
-						</a><br>
+						<div class=" currentbcirc"></div>
+						<p>All categories</p><br>
 
-						<?php status_circle('open') ?>
-						<a style="text-decoration: none; color: #a81600;" href="<?php echo "./courseview.php?course={$_GET['course']}&name={$_GET['name']}&status=open" ?>">
-							<p>Active complaints</p>
-						</a><br>
+						<div class="blankcircles "></div>
+						<p>Active</p><br>
 
-						<?php status_circle('close') ?>
-						<a style="text-decoration: none; color: #a81600;" href="<?php echo "./courseview.php?course={$_GET['course']}&name={$_GET['name']}&status=close" ?>">
-							<p>Closed complaints</p>
-						</a><br>
+						<div class="blankcircles "></div>
+						<p>Closed</p><br>
 
 					</div>
 
 					<!-- sort by -->
-					<div class="catgrydiv" style="visibility: hidden;">
+					<div class="catgrydiv">
 						<h4>Sort by</h4><br>
 						<div class=" currentbcirc">
 							<div class="blankcircle"></div>
@@ -443,6 +398,27 @@ function status_circle($is_stat)
 			<!-------------------- right side -------------------->
 
 			<div class="rightside">
+				<!---------- add complaint button ---------->
+				<div class="combtn">
+
+                	<input class="comntbtn" type="submit" name="new complaint" value="add complaint">
+
+                </div>
+
+
+
+				<!---------- search div ---------->
+				<div class="searchdiv">
+
+					<input class="sinput" type="text" name="" placeholder="search complaints">
+
+				</div>
+
+
+
+
+
+
 
 
 				<!----------- complaint div ----------->
@@ -454,17 +430,16 @@ function status_circle($is_stat)
 						<!-- box head -->
 						<div class="boxhead">
 							<i class="fas fa-exclamation-circle"></i>
-							<span><b><?php echo count($sorted_complaint) ?> </span>
+							<span><b><?php echo count($course_data['complaints']) ?> </span>
 							<span>Complaints</b></span>
 
 						</div>
 
 
-						<?php show_complaints()
-						?>
+						<?php show_complaints() ?>
+
 
 					</div>
-
 
 				</div>
 
