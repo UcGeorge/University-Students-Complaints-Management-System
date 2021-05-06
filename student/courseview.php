@@ -113,6 +113,7 @@ function show_complaints()
 		}
 
 		echo '
+		<a href="complaintview.php?id=' . base64_encode($complaint['id']) . '" style="text-decoration: none;">
 		<div class="boxgan">
 			<div class="secone">
 				<div class="shead">
@@ -142,6 +143,7 @@ function show_complaints()
 				</div>
 			</div>
 		</div>
+		</a>
 		';
 	}
 }
@@ -233,12 +235,6 @@ function status_circle($is_stat)
 						</a>
 						<hr>
 
-						<a href="">
-							<i class="fas fa-inbox"></i>
-							My Inbox
-
-						</a>
-
 						<a href="studentDash.php">
 							<i class="fas fa-book"></i>
 							My Courses
@@ -278,14 +274,8 @@ function status_circle($is_stat)
 
 			</a>
 
-			<!-- My inbox nav -->
-			<a href="" class="inboxnav">
-				<span>My Inbox</span>
-
-			</a>
-
 			<!-- My Courses nav -->
-			<a href="./studentDash.php" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
+			<a href="studentDash.php" class="coursesnav" onmouseover="mOver()" onmouseout="mOut()">
 				<span>My Courses </span>
 
 			</a>
