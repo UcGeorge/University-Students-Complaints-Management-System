@@ -353,4 +353,38 @@ class Complaint
 
         return $complaints_arr;
     }
+
+    // Add complaint for category
+    public function add_complaint($iid, $title, $desc, $cat, $auth, $tags)
+    {
+        // echo $id, $text, $author, $type;
+        // Create query
+        $sql = "INSERT INTO 
+                    `complaint` (`id`, `author`, `category`, `title`, `description`) 
+                VALUES
+                    ('$iid', '$auth', '$cat', '$title', '$desc')";
+
+        // echo $sql;
+
+        if ($this->conn->query($sql) === TRUE) {
+            // return "New record created successfully";
+        } else {
+            return "Error: " . $sql . "<br>" . $this->conn->error;
+        }
+
+        foreach ($tags as $tag) {
+            $sql = "INSERT INTO 
+                    `tag-complaint` (`tag`, `complaint`) 
+                VALUES
+                    ($tag, '$iid')";
+
+            if ($this->conn->query($sql) === TRUE) {
+                // return "New record created successfully";
+            } else {
+                return "Error: " . $sql . "<br>" . $this->conn->error;
+            }
+        }
+
+        return 'success';
+    }
 }
